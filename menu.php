@@ -1,5 +1,3 @@
-<!--Essa aba se refere ao menu de navegação do site-->
-
 <nav class="navbar navbar-inverse"><!--Apague o inverse para estar alterando a cor do menu de navegação-->
   <div class="container-fluid"><!--Essa linha cria uma borda entre o menu e o texto-->
     
@@ -20,18 +18,16 @@
         <li class="dropdown">
           
           <!--Tudo que esta dentro do código a baixo se refere ao botão de busa por categoria-->
-          <!----------------------------------------------------------------------------------------------------------------------->
+          <!---------------------------------------------------------------------------------------------------------------------->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Categoria <span class="caret"></span></a>
 
           <ul class="dropdown-menu">                  <!--Os itens Desing, Infra-estrutra, Dados e etc estão dentro de categorias-->
-            <li><a href="pgcameras.php?cat=Câmeras">Câmera de segurança</a></li>
-            <li><a href="pgcontroleacesso.php?cat=Controle de acesso">Controle de acesso</a></li>
-            <li><a href="#">Sistemas de intercomunicação</a></li>
-            <li><a href="#">Sensores ambientes</a></li>
+            <li><a href="categoria.php?cat=Câmeras">Câmera de segurança</a></li>
+            <li><a href="categoria.php?cat=Controle de acesso">Controle de acesso</a></li>
+            <li><a href="categoria.php?cat=Sensor de presença">Sensor de presença</a></li>
             <li><a href="#">Sistemas de gravação de áudio</a></li>
           </ul>
-          <!----------------------------------------------------------------------------------------------------------------------->
-
+          <!---------------------------------------------------------------------------------------------------------------------->
         </li>
       </ul>
       <!----------------------------------------------------------------------------------------------------------------------->
@@ -43,9 +39,9 @@
       </form>
       <!----------------------------------------------------------------------------------------------------------------------->
       <ul class="nav navbar-nav navbar-right">
+      <li><a href="cadastrar_produto.php"><span> Cadastar produtos</a></li>
+        <?php  include 'session_start.php';?>
         <li><a href="contato.php">Contato</a></li>
-        <li><a href="cadastro.php"><span> Cadastro</a></li>
-        <li><a href="login.php"><span> Login</a></li>
       </ul>
     </div>
   </div>
