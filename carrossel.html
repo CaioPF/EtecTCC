@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>    
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='carrossel.js'></script>
-    <style type="text/css">
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>    
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+<script src='carrossel.js'></script>
+
+<style type="text/css">
         
 .content{
     height: 28;
@@ -15,13 +16,14 @@
     margin-top: 5%;
     margin-left: 24.6%; /*centralizado*/
     border-width: 1.5px; 
-    border-style: solid;
-    
+    border-style: solid; 
 }
+
 .content .slide img{
     height: 100%;
     width: 100%;
 }
+
 img {
     height: 28px;
     width: 50vw;
@@ -35,6 +37,7 @@ img {
     left: 43vw;
     display: flex;
 }
+
 .bar{
     height: 8px;
     width: 30px;
@@ -45,37 +48,47 @@ img {
     cursor: pointer;
     transform: .5s ease;
 }
+
 .bar:hover{
     background-color: #Daa520;
     border: 2px solid #Daa520;
 }
+
 input{
     display: none;
 }
+
 .slides {
     display: flex;
     width: 500%;
     height: 100%;
 }
+
 .slide{
     width: 20%;
     transition: .6s;
 }
+
 #slide1:checked ~ .s1 {
     margin-left: 0;
 }
+
 #slide2:checked ~ .s1 {
     margin-left: -20%;
 }
+
 #slide3:checked ~ .s1 {
     margin-left: -40%;
 }
+
 #slide4:checked ~ .s1 {
     margin-left: -60%;
 }
+
 #slide5:checked ~ .s1 {
     margin-left: -80%;
 }
+
 .label{
     display: flex;
     margin-top: 6.1%;
@@ -87,7 +100,8 @@ input{
     width: 5vw;
     transform: scale(1.2);
 }
-    </style>
+
+</style>
 </head>
 <body>
 <div class="content">
@@ -117,8 +131,7 @@ input{
         <label class="bar" for="slide2"></label>
         <label class="bar" for="slide3"></label>
         <!--<label class="bar" for="slide4"></label>
-        <label class="bar" for="slide5"></label>-->
-        
+        <label class="bar" for="slide5"></label>--> 
     </div>
     
 </body>
