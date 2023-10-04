@@ -1,0 +1,197 @@
+-- TABELA PARA TESTES -- 
+
+ drop database tcc_ecommerce;
+
+create database tcc_ecommerce;
+
+use tcc_ecommerce;
+
+select * from loginn;
+select * from pessoa;
+select * from tipo_usuario;
+select * from pessoa_fisica;
+select * from pessoa_juridica;
+select * from funcionario;
+select * from endereco;
+select * from telefone;
+
+
+create table loginn(
+id_login int auto_increment primary key,
+email varchar (100),
+senha varchar (50)
+);
+
+insert into loginn (email, senha, tipo_pessoa)
+values ('laura.etec@email.com', '123456789', '1'),
+       ('felipe.etec@email.com', '123456789', '1'),
+       ('Caio.etec@email.com', '123456789', '1'),
+       ('kevin.etec@email.com', '123456789', '1'),
+       ('jamerson.etec@email.com', '123456789', '1'),
+       ('jefferson.etec@email.com', '123456789', '1'),
+       ('ana.etec@email.com', '123456789', '1');
+       
+-- ------------------------------------------------------------------------------------------------------------------------------ --
+--  pessoa fisica ou juridica
+create table pessoa(
+id_pessoa int auto_increment primary key,
+tipo_pessoa int,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+select * from pessoa;
+
+-- ------------------------------------------------------------------------------------------------------------------------------ --
+--  nesta tabela teremos os seguintes tipos de usuario: Clientes, ADM, e vendedor. (pessoa fisca e pessoa juridica são do tipo cliente)
+create table tipo_usuario(
+id_usuario int auto_increment primary key,
+tipo_usuario varchar(50),
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+-- ------------------------------------------------------------------------------------------------------------------------------ --
+
+create table pessoa_fisica(
+id_pf int auto_increment primary key,
+nome_pf varchar(100) not null,
+sobrenome_pf varchar(100) not null,
+nascimento_pf date not null,
+cpf_pf char(11) not null,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+insert into pessoa_fisica(nome_pf, sobrenome_pf, nascimento_pf, cpf_pf, id_login)
+values ('Laura', 'Bispo', '1981-08-20', '12345678911', '1'),
+       ('Felipe', 'Galdino', '1982-04-02', '12345678922', '2'),
+       ('Caio', 'Fernandes','1983-03-30', '12345678933', '3'),
+       ('Kevin', 'Correa','1984-12-07', '12345678944', '4'),
+       ('Jamerson', 'Ferreira','1985-01-12', '12345678955', '5'),
+       ('Jefferson', 'Alvino','1986-05-12', '12345678966', '6'),
+       ('Ana', ' Perchak','1987-03-26', '12345678977', '7');
+
+-- ------------------------------------------------------------------------------------------------------------------------------ --
+
+create table pessoa_juridica(
+id_pj int auto_increment primary key,
+nome_fantasia_pj varchar(100) not null,
+razao_social_pj varchar(100) not null,
+cnpj_pj char(14) not null,
+abertura_pj varchar(10) not null,
+funcionario_comprador_pj varchar(100) not null,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+-- ------------------------------------------------------------------------------------------------------------------------------ --
+
+create table funcionario(
+id_func int auto_increment primary key,
+nome_func varchar(100) not null,
+sobrenome_func varchar(100) not null,
+nascimento_func date not null,
+cpf_func char(11) not null,
+cargo_func varchar(100) not null,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+select * from funcionario;
+
+-- ----------------------------------------------------------------------------------------------------------------------------- --
+
+create table endereco(
+id_endereco int auto_increment primary key,
+estado varchar(50) not null,
+cidade varchar(100) not null,
+bairro varchar(100) not null,
+cep varchar(10) not null,
+logradouro varchar(255) not null,
+numero varchar(20) not null,
+complemento varchar(100),
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+select * from endereco;
+
+-- ----------------------------------------------------------------------------------------------------------------------------- --
+
+create table telefone(
+id_telefone int auto_increment primary key,
+ddd varchar(3) not null,
+numero varchar(11) not null,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+select * from telefone;
+-- -------------------------------------------------------------------------------------------------------------------------- --
+
+create table produto (
+id_produto int auto_increment primary key,
+nome_produto varchar(50) not null,
+descricao_produto varchar(1000) not null,
+preco_produto decimal(10, 2) not null,
+categoria_produto varchar(20) not null,
+pasta_imagem varchar(50) not null, -- Coluna para armazenar a pasta da imagem
+imagem_produto varchar(255),
+quantidade_produto int not null
+);
+
+insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
+values -- Câmeras
+	   ('Câmera TP-Link', 'Resolução de vídeo 1080p (Full HD), visão panorâmica 360°, conectividade Wi-Fi, visão noturna, detecção de movimento', '289.90', 'Câmeras', 'camera', 'Tp-link', '50'),
+	   ('Câmera Arlo Ultra', 'Resolução 4K HDR, visão noturna avançada, detecção de movimento avançada e integração com assistentes de voz.', '4698.00', 'Câmeras', 'camera','Arlo Ultra', '8'),
+       ('Câmera Amcrest ProHD', 'A Amcrest ProHD é uma câmera de segurança interna que oferece qualidade de vídeo em 1080p, visão noturna e detecção de movimento. Ela é conhecida por ser uma opção acessível com recursos sólidos.', '1339.90', 'Câmeras', 'camera','Amcrest ProHD', '11'),
+       ('Câmera Axis Communications Q Series', ' A Axis é uma marca líder em câmeras de rede e oferece uma variedade de modelos com recursos de alta qualidade', '1908.49', 'Câmeras', 'camera','Axis Communications Q Series', '6'),
+       ('Câmera teste','Não use isso como uma referencia meu querido', '99999.99', 'Câmeras', 'camera', 'Teste', '0');
+       
+insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
+values -- Controle de acesso
+	   ('iCLASS SE', ' Este leitor de cartão inteligente oferece autenticação segura por meio de cartões de proximidade ou smartphones. Ele suporta várias tecnologias de cartão e oferece comunicações criptografadas para proteger contra ameaças de segurança.', '599.90', 'Controle de acesso', 'controle de acesso','iCLASS SE', '20'),
+	   ('BioConnects Suprema BioStation 2', 'Um sistema de controle de acesso biométrico que utiliza reconhecimento de impressão digital avançado para autenticação. Ele é conhecido por sua velocidade e precisão na identificação de usuários.', '3815.80', 'Controle de acesso', 'controle de acesso','BioConnects Suprema BioStation 2', '15'),
+       ('Axis Communications Network Door Controller', 'Este controlador de porta de rede permite a integração de câmeras de segurança, intercomunicadores e controle de acesso em um único sistema de segurança baseado em rede.', '4199.99', 'Controle de acesso', 'controle de acesso', 'Axis Communications Network Door Controller', '20'),
+       ('Controle de acesso TESTE', 'TESTANDO', '9999.99', 'Controle de acesso', 'controle de acesso', 'Controle de acesso TESTE', '0');
+       
+       
+insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
+values -- Sensores de ambiente
+	   ('Sensor de Presença para Iluminação', 'Esse é um sensor de presença', '1500.00','Sensor de presença','sensor de presença','Sensor de Presença para Iluminação','999'),
+       ('Sensor de presença  TESTE', 'TESTANDO', '9999.99', 'Sensor de presença','sensor de presença','Sensor de presença  TESTE','0');
+
+select nome_produto, preco_produto, categoria_produto, imagem_produto from produto;
+
+select * from produto;
+
+-- --------------------------------------------------------------------------------------------------------------------------- --
+
+create table carrinho(
+id_carrinho int auto_increment primary key,
+id_login int,
+foreign key (id_login) references loginn (id_login)
+);
+
+-- --------------------------------------------------------------------------------------------------------------------------- --
+
+create table pedido(
+id_pedido int auto_increment primary key,
+data_pedido date not null,
+hora_pedido time not null,
+quantidade varchar(100) not null,
+id_login int,
+foreign key (id_login) references loginn (id_login),
+id_produto int,
+foreign key (id_produto) references produto (id_produto)
+);
+
+-- ------------------------------------------------------------------------------------------------------------------------------------------ --
+-- tudo o que esta abaxio da linha pontilhada são possiveis tabelas a serem criadas, nada definido. --
+
+create table agendamento(
+id_agendamento int auto_increment primary key,
+orcamento varchar(100) not null,
+visita varchar(100) not null
+);
