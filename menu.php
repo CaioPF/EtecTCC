@@ -39,7 +39,6 @@
       </form>
       <!----------------------------------------------------------------------------------------------------------------------->
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="cadastrar_produto.php"><span> Cadastar produtos</a></li>
         <?php  include 'session_start.php';?>
         <li><a href="contato.php">Contato</a></li>
       </ul>
