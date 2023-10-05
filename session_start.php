@@ -21,6 +21,7 @@ else {
 
             if ($exibe_usuario !== null && isset($exibe_usuario['nome_pf'])) {
                 ?>
+                <Li><a href="" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
                 <li>
                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
                         <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
@@ -48,8 +49,11 @@ else {
                 <?php echo $exibe_usuario_adm['nome_func']; ?><span class="caret"></span>
             </a>
             <ul class="dropdown-menu">
-                <button  class="btn btn-sm btn-danger">Administrador</button>                   
+                <button  class="btn btn-lg btn-danger">Administrador</button>                   
+                <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Altera produto</span></a></li>
+                <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> apagar produto</span></a></li>
                 <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
+                
             </ul>
         </li>
         <?php
