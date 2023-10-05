@@ -1,7 +1,9 @@
 <?php
 include 'conexao.php';
 
+//verifica se a requisição HTTP feita para a página atual foi realizada utilizando o método POST. Isso é frequentemente usado para processar dados submetidos por formulários HTML, garantindo que o código dentro do bloco if seja executado somente quando dados forem enviados via POST.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
     // Dados comuns para ambas as pessoas
     $email = $_POST["email"];
     $senha = $_POST["senha"];

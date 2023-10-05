@@ -52,7 +52,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
-			<h2>Email ou senha incorreto</h2>
+			<h2>Email ou senha incorreto!</h2>
 			<a href="login.php" class="btn btn-block btn-info" role="button">Tentar Novamente</a>
 			<!--<a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>-->
 		</div>

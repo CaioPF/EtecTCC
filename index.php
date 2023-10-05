@@ -20,7 +20,8 @@ include 'links.php';
 include 'menu.php';
 include 'carrossel.html';
 
-$consulta = $mysqli->query('select imagem_produto, nome_produto, preco_produto, quantidade_produto, pasta_imagem from produto');
+$consulta = $mysqli->query('select id_produto,imagem_produto, nome_produto, preco_produto, quantidade_produto, 
+                            pasta_imagem from produto');
 ?>
 <br><br>
 
@@ -37,9 +38,12 @@ $consulta = $mysqli->query('select imagem_produto, nome_produto, preco_produto, 
       <div><h5 style="text-align: center;">R$ <?php echo number_format($exibe['preco_produto'], 2, ',','.'); ?></h5></div> <!--number_format faz com que o preço fique no formato padrão BR-->
       
       <div class="text-center">
-        <button class="btn btn-three">
+        <!--Essa linha permite que o botão delahes seja redirecionado para o arquivo detalhes.php-->
+        <a href="detalhes.php?id_produto=<?php echo $exibe['id_produto']; ?>"> <!--"detalhes.php?id_produto" o id_produto-->
+        <button class="btn btn-three">                                                                <!---é uma variavel-->
           <span class="glyphicon glyphicon-info-sign" style="Color: cadetblue"> Detalhes</span>
         </button>
+        </a>
       </div>
       <?php include 'botao_esgotado.php'; ?></br>
       </div>
