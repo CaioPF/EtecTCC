@@ -21,13 +21,21 @@
 include 'conexao.php';	
 include 'menu.php';
 
+if(empty($_GET['txtbuscar'])){
+    header("location: index.php");
+    exit;
+
+}
+
 $pesquisa = $_GET['txtbuscar'];
 $consulta = $mysqli->query("SELECT * FROM produto WHERE nome_produto LIKE CONCAT('%','$pesquisa','%')");
 // se for adicionado uma tabela para marcas do produto adicione o 
 //seguinte código "OR nome_marca_produto LIKE CONCAT('%','$pesquisa','%')" depois do "CONCAT('%','$pesquisa','%')"
 // mas tera que fazer um inner join.
-
-$exibe_busca = $consulta->fetch_assoc();
+if ($consulta->num_rows == 0) {
+    header("location: erro_busca.php");
+    exit;
+}
 
 ?>
 	
