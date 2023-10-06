@@ -24,7 +24,7 @@ else {
                 <Li><a href="" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
                 <li>
                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
-                        <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
+                    <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">                       
                         <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
