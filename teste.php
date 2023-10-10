@@ -6,13 +6,13 @@ include 'cadastro_if.php';
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro de Clientes</title>
+<meta charset="UTF-8">
+<title>Cadastro de Clientes</title>
 
-    <?php include 'links.php'; ?>
-        
-    <link rel="stylesheet" href="cadastro.css">
-    <script src="jquery.mask.js"></script>
+<?php include 'links.php'; ?>
+    
+<link rel="stylesheet" href="cadastro.css">
+<script src="jquery.mask.js"></script>
 
     <script>
     //a masca nao está funcionando.
@@ -68,32 +68,33 @@ include 'cadastro_if.php';
 <!-------------------------------------------------------------------------------------------------->
 
     <h1>Criar conta</h1>
-    <form method="POST" action="cadastro_if.php" onsubmit="return validarSenha();">
+
+    <!-- Formulário Pessoa Física -->
+    <form method="POST" action="cadastro_if.php" onsubmit="return validarSenha();" id="form_pf">
         <label>Tipo de Pessoa:</label></br>
         <input type="radio" name="tipo_pessoa" value="1" required onclick="showFields('pessoa_fisica_fields')"> Pessoa Física
         <input type="radio" name="tipo_pessoa" value="2" required onclick="showFields('pessoa_juridica_fields')"> Pessoa Jurídica<br>
 
-        <!-- Campos específicos para Pessoa Física -->
         <div id="pessoa_fisica_fields" style="display: none;">
             <label for="nome_pf">Nome:</label>
-            <input type="text" name="nome_pf"><br>
+            <input type="text" name="nome_pf" required><br>
 
             <label for="sobrenome_pf">Sobrenome:</label>
-            <input type="text" name="sobrenome_pf"><br>
+            <input type="text" name="sobrenome_pf" required><br>
 
             <label for="nascimento_pf">Data de Nascimento:</label>
-            <input type="date" name="nascimento_pf"><br>
+            <input type="date" name="nascimento_pf" required><br>
 
             <label for="cpf_pf">CPF:</label>
-            <input type="text" name="cpf_pf" maxlength="11" id="mask_cpf">
-            <div id="cpf-erro" class="erro" style="display: none;">CPF inválido.</div><br>
+            <input type="text" name="cpf_pf" maxlength="11" id="mask_cpf" required>
+            <div id="cpf-erro" class="erro" style="display: none;" >CPF inválido.</div><br>
 
             <label for="telefone_pf">Telefone:</label>
-            <input type="text" name="telefone_pf_ddd" placeholder="DDD" maxlength="3">
-            <input type="text" name="telefone_pf_numero" placeholder="Número" maxlength="11" id="mask_telefone"><br>
+            <input type="text" name="telefone_pf_ddd" placeholder="DDD" maxlength="3" required>
+            <input type="text" name="telefone_pf_numero" placeholder="Número" maxlength="11" id="mask_telefone" required><br>
 
             <label for="estado_pf">Estado:</label>
-            <select name="estado_pf">
+            <select name="estado_pf" required>
                 <option value=""></option>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
@@ -125,49 +126,75 @@ include 'cadastro_if.php';
             </select><br>
 
             <label for="cidade_pf">Cidade:</label>
-            <input type="text" name="cidade_pf"><br>
+            <input type="text" name="cidade_pf" required><br>
 
             <label for="bairro_pf">Bairro:</label>
-            <input type="text" name="bairro_pf"><br>
+            <input type="text" name="bairro_pf" required><br>
 
             <label for="cep_pf">CEP:</label>
-            <input type="text" name="cep_pf" id="mask_cep"><br>
+            <input type="text" name="cep_pf" id="mask_cep" required><br>
 
             <label for="logradouro_pj">Rua:</label>
-            <input type="text" name="logradouro_pf"><br>
+            <input type="text" name="logradouro_pf" required><br>
 
             <label for="numero_pf">Número:</label>
-            <input type="text" name="numero_pf"><br>
+            <input type="text" name="numero_pf" required><br>
 
             <label for="complemento_pf">Complemento:</label>
-            <input type="text" name="complemento_pf" placeholder="Opcional"><br>
+            <input type="text" name="complemento_pf" placeholder="Opcional" required><br>
         </div>
 
-        <!----------------------------------------------------------------------------------------------------------------->
+        <!-- Campos de email e senha (inicialmente ocultos) -->
+        <div id="email_senha_fields" style="display: none;">
+            <label for="email">Email:</label>
+            <input type="email" name="email" placeholder="@gmail.com" required>
+            <div id="email-erro" class="erro" style="display: none;">Email inválido.</div><br>
 
-        <!-- Campos específicos para Pessoa Jurídica -->
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" id="senha" required><br>
+
+            <label for="confirmar_senha">Confirmar Senha:</label>
+            <input type="password" name="confirmar_senha" id="confirmar_senha" required><br>
+            <div id="senha-erro" class="erro" style="display: none;">Confirmação de senha incorreta.</div>
+        </div>
+
+        <input type="submit" value="Cadastrar" id="cadastrar" style="display: none;">
+    </form>
+
+
+
+
+
+
+
+
+    
+
+    <!-- Formulário Pessoa Jurídica -->
+    <form method="POST" action="cadastro_if.php" onsubmit="return validarSenha();" id="form_pj">
+
         <div id="pessoa_juridica_fields" style="display: none;">
             <label for="nome_fantasia_pj">Nome Fantasia:</label>
-            <input type="text" name="nome_fantasia_pj"><br>
+            <input type="text" name="nome_fantasia_pj" required><br>
 
             <label for="razao_social_pj">Razão Social:</label>
-            <input type="text" name="razao_social_pj"><br>
+            <input type="text" name="razao_social_pj" required><br>
 
             <label for="cnpj_pj">CNPJ:</label>
-            <input type="text" name="cnpj_pj" maxlength="14" id="mask_cnpj_pj"><br>
+            <input type="text" name="cnpj_pj" maxlength="14" id="mask_cnpj_pj" required><br>
 
             <label for="abertura_pj">Data de Abertura:</label>
-            <input type="text" name="abertura_pj" id="mask_abertura_pj"><br>
+            <input type="text" name="abertura_pj" id="mask_abertura_pj" required><br>
 
             <label for="funcionario_comprador_pj">Funcionário Comprador:</label>
-            <input type="text" name="funcionario_comprador_pj"><br>
+            <input type="text" name="funcionario_comprador_pj" required><br>
 
             <label for="telefone_pj">Telefone:</label>
-            <input type="text" name="telefone_pj_ddd" placeholder="DDD" maxlength="3">
-            <input type="text" name="telefone_pj_numero" placeholder="Número" maxlength="11" id="mask_telefone_pj"><br>
+            <input type="text" name="telefone_pj_ddd" placeholder="DDD" maxlength="3" required>
+            <input type="text" name="telefone_pj_numero" placeholder="Número" maxlength="11" id="mask_telefone_pj" required><br>
 
             <label for="estado_pj">Estado:</label>
-            <select name="estado_pj">
+            <select name="estado_pj" required>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
                 <option value="AP">(AP)</option>
@@ -198,24 +225,24 @@ include 'cadastro_if.php';
             </select><br>
 
             <label for="cidade_pj">Cidade:</label>
-            <input type="text" name="cidade_pj"><br>
+            <input type="text" name="cidade_pj" required><br>
 
             <label for="bairro_pj">Bairro:</label>
-            <input type="text" name="bairro_pj"><br>
+            <input type="text" name="bairro_pj" required><br>
 
             <label for="cep_pj">CEP:</label>
-            <input type="text" name="cep_pj" id="mask_cep_pj"><br>
+            <input type="text" name="cep_pj" id="mask_cep_pj" required><br>
 
             <label for="logradouro_pj">Rua:</label>
-            <input type="text" name="logradouro_pj"><br>
+            <input type="text" name="logradouro_pj" required><br>
 
             <label for="numero_pj">Número:</label>
-            <input type="text" name="numero_pj"><br>
+            <input type="text" name="numero_pj" required><br>
 
             <label for="complemento_pj">Complemento:</label>
-            <input type="text" name="complemento_pj" placeholder="Opcional"><br>
+            <input type="text" name="complemento_pj" placeholder="Opcional" required><br>
         </div>
-
+        
         <!-- Campos de email e senha (inicialmente ocultos) -->
         <div id="email_senha_fields" style="display: none;">
             <label for="email">Email:</label>
@@ -236,11 +263,14 @@ include 'cadastro_if.php';
     <script>
         // Função para mostrar/ocultar campos com base no tipo de pessoa selecionado
         function showFields(id) {
-            // Oculta todos os campos
-            document.getElementById('email_senha_fields').style.display = 'none';
-            document.getElementById('pessoa_fisica_fields').style.display = 'none';
-            document.getElementById('pessoa_juridica_fields').style.display = 'none';
-
+            if (id === 'pessoa_fisica_fields') {
+                document.getElementById('form_pf').style.display = 'block';
+                document.getElementById('form_pj').style.display = 'none';
+            } else if (id === 'pessoa_juridica_fields') {
+                document.getElementById('form_pf').style.display = 'none';
+                document.getElementById('form_pj').style.display = 'block';
+            }
+            
             // Mostrar os campos do tipo selecionado
             document.getElementById(id).style.display = 'block';
 
@@ -266,7 +296,6 @@ include 'cadastro_if.php';
                 return true;
             }
         }
-
     </script>
 <?php include 'rodape.html' ?>
 </body>
