@@ -12,6 +12,6 @@
   <button class="btn btn-block btn-danger" disabled>
     <span class="glyphicon glyphicon-remove-circle"> Esgotado</span>
   </button>
-
+ 
   <?php } ?>
 </div>

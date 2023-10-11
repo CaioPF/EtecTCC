@@ -14,7 +14,9 @@
   height: 100%;
   z-index: 1;
   background-color: rgba(187, 184, 184, 0.1);
-  transition: all 0.3s;
+  transition: all 0.3s; 
+
+
 }
 .btn-three:hover::before {
   opacity: 0 ;
