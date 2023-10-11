@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de produto</title>
+    <title>Protect King</title>
     <link rel="stylesheet" href="login.css">
     
     <?php include 'links.php'; ?>
@@ -44,7 +44,7 @@ include 'conexao.php';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Protector Kings</a>
+        <a class="navbar-brand" href="index.php">Protect King</a>
         </div>
         
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -74,7 +74,8 @@ include 'conexao.php';
         <!--<label for="categoria">Categoria do produto</label>
         <input type="text" id="categoria_produto" name="categoria_produto" step="0.01" required><br><br>-->
         <label for="categoria">Categoria do produto</label>
-        <select name="categoria_produto" id="categoria_produto">
+        <select name="categoria_produto" id="categoria_produto" required>
+            <option></option>
             <option>Câmeras</option>
             <option>Controle de acesso</option>
             <option>#</option>

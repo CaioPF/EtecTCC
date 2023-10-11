@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login do Usuário</title>
+    <title>Protect King</title>
 	
     <link rel="stylesheet" href="login.css">
 	
@@ -28,7 +28,7 @@
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	</button>
-		<a class="navbar-brand" href="index.php">Protector Kings</a>
+		<a class="navbar-brand" href="index.php">Protect King</a>
 		</div>
 		
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -3,7 +3,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Minha Loja</title>
+<title>Protect King</title>
 	
 <meta name="viewport" content="width=device-width, initial-scale=1">
 	
