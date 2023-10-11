@@ -174,7 +174,7 @@ if (isset($_POST['email']) && isset($_POST['cpf_pf'])) {
             } 
             else {
                 // Redirecionar para a página de login
-                header('Location: login.php');
+                header('Location: login_sucesso.php');
                 exit;
             }
         }

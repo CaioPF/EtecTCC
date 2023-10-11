@@ -1,4 +1,4 @@
-<!--Esse arquivo redireciona o usuario para uma mensagem de erro onde o email ou cpf já esta cadastrado-->
+<!--Esse arquivo redireciona o usuario para uma mensagem onde o login ddeu certo-->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
 <?php
 	include 'conexao.php';
 ?>
@@ -52,8 +51,8 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
-			<h2>Email ou CPF já cadastrado!</h2>
-			<a href="cadastro.php" class="btn btn-block btn-info" role="button">Tentar Novamente</a>
+			<h2>Usuário cadastrado com sucesso!</h2>
+			<a href="login.php" class="btn btn-block btn-info" role="button">Ir para login</a>
 			<!--<a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>-->
 		</div>
 	</div>
