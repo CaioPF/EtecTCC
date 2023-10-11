@@ -50,7 +50,7 @@ if (!empty($_GET['id_produto'])) {
         </div>
     </div>
 <?php } else {
-    header("location:index.php");
+    header("location: index.php");
     exit;
 } ?>
 

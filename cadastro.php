@@ -33,6 +33,8 @@ include 'cadastro_if.php';
         color: red;
         font-size: 14px;
         }
+
+       
     </style>
     
 
@@ -74,7 +76,7 @@ include 'cadastro_if.php';
         <input type="radio" name="tipo_pessoa" value="2" required onclick="showFields('pessoa_juridica_fields')"> Pessoa Jurídica<br>
 
         <!-- Campos específicos para Pessoa Física -->
-        <div id="pessoa_fisica_fields" style="display: none;">
+        <div class="pessoa_fisica" id="pessoa_fisica_fields" style="display: none;">
             <label for="nome_pf">Nome:</label>
             <input type="text" name="nome_pf"><br>
 

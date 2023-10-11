@@ -1,0 +1,26 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    width: 100vw;
+    height: 90vh;
+}
+.pessoa_fisica
+{
+    width: 30vw;
+    height: 60vh;
+    border: 1px solid black;
+    display: flex;
+    margin: auto;
+    padding: 60px;
+    
+}
+label
+{
+    width: 100px;
+    height: 30px;
+}
