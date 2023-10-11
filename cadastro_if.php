@@ -22,8 +22,7 @@ if (isset($_POST['email']) && isset($_POST['cpf_pf'])) {
     // Fetch os resultados e verifique se há correspondências
     if ($consulta->fetch()) {
         
-        echo 'usuario ja existe';
-        //header('location: "criar um arqquivo de usuario ja cadastrado"');
+        header('location: erro_cadastro.php');
     } 
     else {
         
