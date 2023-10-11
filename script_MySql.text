@@ -30,10 +30,10 @@ select * from telefone;
 -- ------------------------------------------------------------------------------------------------------------------------------------ --
 -- ATENÇÃO!!!
 -- PRIMEIRO CRIE TODAS AS TABELAS PARA DEPOIS ADICONAR AS INFORMAÇÕES DO ADM 
--- Esse é as informações do adm para ter um peril dentro do site pois o cadastro dele nao será possivel até o meneto dentro do site.
+-- Esse é as informações do adm para ter um perfil dentro do site pois o cadastro dele nao será possivel até o meneto dentro do site.
 
 insert into loginn (email, senha)
-values ('Adm@gmail.com', '987456321');
+values ('Adm@gmail.com', '987654321');
 
 insert into tipo_usuario (tipo_usuario, id_login)
 values ('ADM', '1');
@@ -54,19 +54,19 @@ values ('11', '98754542132', '1');
 -- ----------------------------------------------------------------------------------------------------------------------------------- --
 
 -- ATENÇÃO!!!
--- Para que a tabela sejá criada corretamente com os as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
+-- Para a tabela ser criada corretamente com as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
 -- sejá criado corretamente como está na ordem abaixo
 
 -- infromações da nossa equipe ;)
 
 insert into loginn (email, senha)
-values ('laura.etec@email.com', '123456789'),
-       ('felipe.etec@email.com', '123456789'),
-       ('Caio.etec@email.com', '123456789'),
-       ('kevin.etec@email.com', '123456789'),
-       ('jamerson.etec@email.com', '123456789'),
-       ('jefferson.etec@email.com', '123456789'),
-       ('ana.etec@email.com', '123456789');
+values ('laura.etec@gmail.com', '123456789'),
+       ('felipe.etec@gmail.com', '123456789'),
+       ('Caio.etec@gmail.com', '123456789'),
+       ('kevin.etec@gmail.com', '123456789'),
+       ('jamerson.etec@gmail.com', '123456789'),
+       ('jefferson.etec@gmail.com', '123456789'),
+       ('ana.etec@gmail.com', '123456789');
        
 insert into pessoa (tipo_pessoa, id_login)
 values ('1', '2'),
@@ -338,10 +338,10 @@ select * from telefone;
 -- ------------------------------------------------------------------------------------------------------------------------------------ --
 -- ATENÇÃO!!!
 -- PRIMEIRO CRIE TODAS AS TABELAS PARA DEPOIS ADICONAR AS INFORMAÇÕES DO ADM 
--- Esse é as informações do adm para ter um peril dentro do site pois o cadastro dele nao será possivel até o momento dentro do site.
+-- Esse é as informações do adm para ter um perfil dentro do site pois o cadastro dele nao será possivel até o momento dentro do site.
 
 insert into loginn (email, senha)
-values ('Adm@gmail.com', '987456321');
+values ('Adm@gmail.com', '987654321');
 
 insert into tipo_usuario (tipo_usuario, id_login)
 values ('ADM', '1');
@@ -362,19 +362,19 @@ values ('11', '98754542132', '1');
 -- ----------------------------------------------------------------------------------------------------------------------------------- --
 
 -- ATENÇÃO!!!
--- Para que a tabela sejá criada corretamente com os as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
+-- Para a tabela ser criada corretamente com as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
 -- sejá criado corretamente como está na ordem abaixo
 
 -- infromações da nossa equipe ;)
 
 insert into loginn (email, senha)
-values ('laura.etec@email.com', '123456789'),
-       ('felipe.etec@email.com', '123456789'),
-       ('Caio.etec@email.com', '123456789'),
-       ('kevin.etec@email.com', '123456789'),
-       ('jamerson.etec@email.com', '123456789'),
-       ('jefferson.etec@email.com', '123456789'),
-       ('ana.etec@email.com', '123456789');
+values ('laura.etec@gmail.com', '123456789'),
+       ('felipe.etec@gmail.com', '123456789'),
+       ('Caio.etec@gmail.com', '123456789'),
+       ('kevin.etec@gmail.com', '123456789'),
+       ('jamerson.etec@gmail.com', '123456789'),
+       ('jefferson.etec@gmail.com', '123456789'),
+       ('ana.etec@gmail.com', '123456789');
        
 insert into pessoa (tipo_pessoa, id_login)
 values ('1', '2'),
