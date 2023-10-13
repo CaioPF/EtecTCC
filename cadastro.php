@@ -34,8 +34,6 @@ include 'cadastro_if.php';
         font-size: 14px;
         }
     </style>
-    
-
 </head>
 
 <body>
