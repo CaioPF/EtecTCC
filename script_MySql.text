@@ -9,6 +9,7 @@ script que estamos utilizando | POREM!, tem uma versão em teste logo a baixo
                               
 
 -- TABELA PARA TESTES -- 
+
 create database tcc_ecommerce;
 
 use tcc_ecommerce;
@@ -16,7 +17,7 @@ use tcc_ecommerce;
 -- ------------------------------------------------------------------------------------------------------------------------------------ --
 -- Campo para testes
 
- -- drop database tcc_ecommerce;
+-- drop database tcc_ecommerce;
 
 select * from loginn;
 select * from pessoa;
@@ -54,7 +55,7 @@ values ('11', '98754542132', '1');
 -- ----------------------------------------------------------------------------------------------------------------------------------- --
 
 -- ATENÇÃO!!!
--- Para a tabela ser criada corretamente com as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
+-- Para a tabela  criada corretamente com as informações pré estabelecida é importante que vc crie as informações do adm para que todo "id_login"
 -- sejá criado corretamente como está na ordem abaixo
 
 -- infromações da nossa equipe ;)
@@ -225,25 +226,25 @@ quantidade_produto int not null
 
 insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
 values -- Câmeras
-	   ('Câmera TP-Link', 'Resolução de vídeo 1080p (Full HD), visão panorâmica 360°, conectividade Wi-Fi, visão noturna, detecção de movimento', '289.90', 'Câmeras', 'camera', 'Tp-link', '50'),
-	   ('Câmera Arlo Ultra', 'Resolução 4K HDR, visão noturna avançada, detecção de movimento avançada e integração com assistentes de voz.', '4698.00', 'Câmeras', 'camera','Arlo Ultra', '8'),
-       ('Câmera Amcrest ProHD', 'A Amcrest ProHD é uma câmera de segurança interna que oferece qualidade de vídeo em 1080p, visão noturna e detecção de movimento. Ela é conhecida por ser uma opção acessível com recursos sólidos.', '1339.90', 'Câmeras', 'camera','Amcrest ProHD', '11'),
-       ('Câmera Axis Communications Q Series', ' A Axis é uma marca líder em câmeras de rede e oferece uma variedade de modelos com recursos de alta qualidade', '1908.49', 'Câmeras', 'camera','Axis Communications Q Series', '6'),
-       ('Câmera teste','Não use isso como uma referencia meu querido', '99999.99', 'Câmeras', 'camera', 'Teste', '0');
+	   ('Câmera TP-Link', 'Resolução de vídeo 1080p (Full HD), visão panorâmica 360°, conectividade Wi-Fi, visão noturna, detecção de movimento', '289.90', 'Câmeras', 'camera', 'Tp-link.jpg', '50'),
+	   ('Câmera Arlo Ultra', 'Resolução 4K HDR, visão noturna avançada, detecção de movimento avançada e integração com assistentes de voz.', '4698.00', 'Câmeras', 'camera','Arlo Ultra.jpg', '8'),
+       ('Câmera Amcrest ProHD', 'A Amcrest ProHD é uma câmera de segurança interna que oferece qualidade de vídeo em 1080p, visão noturna e detecção de movimento. Ela é conhecida por ser uma opção acessível com recursos sólidos.', '1339.90', 'Câmeras', 'camera','Amcrest ProHD.jpg', '11'),
+       ('Câmera Axis Communications Q Series', ' A Axis é uma marca líder em câmeras de rede e oferece uma variedade de modelos com recursos de alta qualidade', '1908.49', 'Câmeras', 'camera','Axis Communications Q Series.jpg', '6'),
+       ('Câmera teste','Não use isso como uma referencia meu querido', '99999.99', 'Câmeras', 'camera', 'Teste.jpg', '0');
        
 insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
 values -- Controle de acesso
-	   ('iCLASS SE', ' Este leitor de cartão inteligente oferece autenticação segura por meio de cartões de proximidade ou smartphones. Ele suporta várias tecnologias de cartão e oferece comunicações criptografadas para proteger contra ameaças de segurança.', '599.90', 'Controle de acesso', 'controle de acesso','iCLASS SE', '20'),
-	   ('BioConnects Suprema BioStation 2', 'Um sistema de controle de acesso biométrico que utiliza reconhecimento de impressão digital avançado para autenticação. Ele é conhecido por sua velocidade e precisão na identificação de usuários.', '3815.80', 'Controle de acesso', 'controle de acesso','BioConnects Suprema BioStation 2', '15'),
-       ('Axis Communications Network Door Controller', 'Este controlador de porta de rede permite a integração de câmeras de segurança, intercomunicadores e controle de acesso em um único sistema de segurança baseado em rede.', '4199.99', 'Controle de acesso', 'controle de acesso', 'Axis Communications Network Door Controller', '20'),
-       ('Controle de acesso TESTE', 'TESTANDO', '9999.99', 'Controle de acesso', 'controle de acesso', 'Controle de acesso TESTE', '0');
+	   ('iCLASS SE', ' Este leitor de cartão inteligente oferece autenticação segura por meio de cartões de proximidade ou smartphones. Ele suporta várias tecnologias de cartão e oferece comunicações criptografadas para proteger contra ameaças de segurança.', '599.90', 'Controle de acesso', 'controle de acesso','iCLASS SE.jpg', '20'),
+	   ('BioConnects Suprema BioStation 2', 'Um sistema de controle de acesso biométrico que utiliza reconhecimento de impressão digital avançado para autenticação. Ele é conhecido por sua velocidade e precisão na identificação de usuários.', '3815.80', 'Controle de acesso', 'controle de acesso','BioConnects Suprema BioStation 2.jpg', '15'),
+       ('Axis Communications Network Door Controller', 'Este controlador de porta de rede permite a integração de câmeras de segurança, intercomunicadores e controle de acesso em um único sistema de segurança baseado em rede.', '4199.99', 'Controle de acesso', 'controle de acesso', 'Axis Communications Network Door Controller.jpg', '20'),
+       ('Controle de acesso TESTE', 'TESTANDO', '9999.99', 'Controle de acesso', 'controle de acesso', 'Controle de acesso TESTE.jpg', '0');
        
        
 insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
 values -- Sensores de ambiente
-	   ('Sensor de Presença para Iluminação', 'Esse é um sensor de presença', '1500.00','Sensor de presença','sensor de presença','Sensor de Presença para Iluminação','999'),
-       ('Sensor de presença  TESTE', 'TESTANDO', '9999.99', 'Sensor de presença','sensor de presença','Sensor de presença  TESTE','0');
-
+	   ('Sensor de Presença para Iluminação', 'Esse é um sensor de presença', '1500.00','Sensor de presença','sensor de presença','Sensor de Presença para Iluminação.jpg','999'),
+       ('Sensor de presença  TESTE', 'TESTANDO', '9999.99', 'Sensor de presença','sensor de presença','Sensor de presença  TESTE.jpg','0');
+       
 
 select nome_produto, preco_produto, categoria_produto, imagem_produto from produto;
 
@@ -278,6 +279,7 @@ id_agendamento int auto_increment primary key,
 orcamento varchar(100) not null,
 visita varchar(100) not null
 );
+
 
 
 

@@ -12,10 +12,10 @@ include 'cadastro_if.php';
     <?php include 'links.php'; ?>
         
     <link rel="stylesheet" href="cadastro.css">
+
     <script src="jquery.mask.js"></script>
 
     <script>
-    //a masca nao está funcionando.
     $(document).ready(function(){
         $("#mask_cep").mask("00000-000");
         $("#mask_telefone").mask("00000-0000");
@@ -39,7 +39,6 @@ include 'cadastro_if.php';
 </head>
 
 <body>
-    
 <!------------------------------------------------------------------------------------------------->
 <!--Menu-->
 <div class="nav">
@@ -94,7 +93,7 @@ include 'cadastro_if.php';
 
             <label for="estado_pf">Estado:</label>
             <select name="estado_pf">
-                <option value=""></option>
+                <option value="">Selecione</option>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
                 <option value="AP">(AP)</option>
@@ -168,6 +167,7 @@ include 'cadastro_if.php';
 
             <label for="estado_pj">Estado:</label>
             <select name="estado_pj">
+                <option value="">Selecione</option>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
                 <option value="AP">(AP)</option>

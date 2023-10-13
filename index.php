@@ -31,7 +31,7 @@ $consulta = $mysqli->query('select id_produto,imagem_produto, nome_produto, prec
     <div class = "col-sm-3">
     <div class = "bvvvxW">
     </br>
-      <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>.jpg" class="img-responsive imgm" style=""> <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
+      <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>" class="img-responsive imgm" style=""> <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
 
        <div><h4 style="text-align: center;"><b><?php echo mb_strimwidth($exibe['nome_produto'], 0, 15, '...'); ?></b></h4></div> <!--mb_strimwidth limita o tanto de caracteres que é visivel-->
 

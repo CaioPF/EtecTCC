@@ -35,7 +35,7 @@ if (!empty($_GET['id_produto'])) {
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
                 <h1>Detalhes do Produto</h1>
-                <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>.jpg" class="img-responsive imgm">
+                <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']);?>" class="img-responsive imgm">
                 <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
                 <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
             </div>

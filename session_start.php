@@ -4,7 +4,7 @@
 include 'conexao.php';
 session_start();
 
-if (empty($_SESSION['ID'])) { ?>
+if (empty($_SESSION['ID'])) { ?> <!--o "empty" verifica se estavazio, se estiver ele ira mostrar "Cadastro" e "Login" -->
     <!-- Tudo que está aqui dentro irá desaparecer quando o login for efetuado com sucesso -->
     <li><a href="cadastro.php"><span> Cadastro</span></a></li>
     <li><a href="login.php"><span> Login</span></a></li>
@@ -21,7 +21,7 @@ else {
 
             if ($exibe_usuario !== null && isset($exibe_usuario['nome_pf'])) {
                 ?>
-                <Li><a href="" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
+                <Li><a href="#" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
                 <li>
                     <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
                     <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
@@ -33,7 +33,7 @@ else {
                 <?php
             } 
         }
-    } 
+    }
     elseif ($_SESSION['Status'] == 'ADM') {
         // Consulta para obter informações do administrador
         $consulta_adm = $mysqli->query("SELECT loginn.id_login, funcionario.nome_func
@@ -42,27 +42,26 @@ else {
                                        WHERE loginn.id_login = '$_SESSION[ID]'");
         $exibe_usuario_adm =  $consulta_adm->fetch_assoc();
         ?>
-
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="cadastrar_produto.php"><span>Cadastar produtos</span></a></li>
-                <li><a href="#"><span> Altera produto</span></a></li>
-                <li><a href="#"><span> apagar produto</span></a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="adm.php" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
-                <?php echo $exibe_usuario_adm['nome_func']; ?><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <button  class="btn btn-lg btn-danger">Administrador</button>                   
-                
-                <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
-                
-            </ul>
-        </li>
-        <?php
+        <ul class="dropdown-menu">
+            <li><a href="adm_cadastrar_produto.php"><span>Cadastar produtos</span></a></li>
+            <li><a href="adm_aterar_produto.php"><span> Altera produto</span></a></li>
+            <li><a href="adm_apagar_produto.php"><span> apagar produto</span></a></li>
+        </ul>
+    </li>
+    
+    <li>
+        <a href="adm.php" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
+            <?php echo $exibe_usuario_adm['nome_func']; ?><span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <button  class="btn btn-lg btn-danger">Administrador</button>                   
+            
+            <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
+            
+        </ul>
+    </li> 
+    <?php
     }
     // Lidar com outros estados de sessão, se necessário
 }

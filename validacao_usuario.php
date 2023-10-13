@@ -19,12 +19,14 @@ if (mysqli_num_rows($validacao) == 1) {
    
    if ($exibeUsuario['tipo_usuario'] == 'Cliente') {
        $_SESSION['Status'] = 'Cliente';
-   } else {
+   } 
+   else {
        $_SESSION['Status'] = 'ADM';
    }
    
    header('location: index.php');
-} else {
+}
+ else {
     header('location: erro_login.php');
 }
 ?>
