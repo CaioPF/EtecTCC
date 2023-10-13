@@ -116,6 +116,7 @@
     </script>
 </head>
 
+
 <body>
 <?php
 //se o usuário tentar acessar um dos arquivos pela URL ou sem estar logado como ADM, ele será redirecionado para a index
@@ -140,19 +141,15 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
   </div>
 </div>
 
-
 <div class="aviso"><p>AVISO!!!!</p>
     <p>É recomendado que o nome do "Nome da imagem do produto" sejá o mesmo do "Nome do Produto"
     com a extensão ".jpg"</p>
     <p>ex: camera 4k.jpg</p>
 </div>
 
-
 <div class="borda">
 <h1 class="center-content">Cadastro de produtos</h1> 
 </br>
-
-
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="center-content" enctype="multipart/form-data">
 
