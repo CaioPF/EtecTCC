@@ -11,12 +11,14 @@
     include 'adm_menu.php';
     ?>
      
+    <!--CSS-->
     <style>
         .center-content {
             text-align: center;
             margin: 0 auto;
             max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
         }
+
         .borda{
             border-width: 1.5%;
             border-style: solid;
@@ -24,7 +26,6 @@
             height: 25%;
             width: 25%;
             margin-left: 38%;
-
         }
 
         .aviso{
@@ -36,13 +37,78 @@
             position: absolute;
             top: 90%; /* Ajuste conforme necessário para definir a distância do topo */
             right: 10%; /* Ajuste conforme necessário para definir a distância da direita */
+        }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Estilos do botão para fechar o modal */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .error {
+            background-color: #ff0000; /* Cor de fundo vermelha para mensagens de erro */
         }
     </style>
 
+    <!----------------------------------------------------------------------------------->
+    <!--js-->
     <script src="jquery.mask.js"></script>
 
     <script>
+    //Sucesso
+    function openSuccessModal() {
+        var modal = document.getElementById('success-modal');
+        modal.style.display = 'block';
+
+        setTimeout(function() {
+        modal.style.display = 'none';
+        }, 1000); // Fecha o modal após 1 segundo (1000 milissegundos)
+    }
+    //-------------------------------------------------------------------------------
+    // Erro 
+    function openErrorModal(errorMessage) {
+        var modal = document.getElementById('error-modal');
+        var errorMessageElement = document.getElementById('error-message');
+        errorMessageElement.innerHTML = errorMessage;
+        modal.style.display = 'block';
+
+        setTimeout(function() {
+        modal.style.display = 'none';
+        }, 1000); // Fecha o modal após 1 segundo (1000 milissegundos)
+    }
+
+    function closeErrorModal() {
+        document.getElementById('error-modal').style.display = 'none';
+    }
+
+    //-------------------------------------------------------------------------------
+    //Script da mascara 
     $(document).ready(function(){
         $("#mask_precop").mask("000.000.000.000.000,00");
         
@@ -58,6 +124,23 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
 } 
 ?>
 
+<!-- Mensagem de aviso que o cadastro foi bem sucessedido -->
+<div id="success-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeSuccessModal()">&times;</span>
+    <p>Produto cadastrado com sucesso!</p>
+  </div>
+</div>
+
+<!--Mensagem de erro-->
+<div id="error-modal" class="modal">
+  <div class="modal-content error">
+    <span class="close" onclick="closeErrorModal()">&times;</span>
+    <p id="error-message">Erro ao cadastrar o produto</p>
+  </div>
+</div>
+
+
 <div class="aviso"><p>AVISO!!!!</p>
     <p>É recomendado que o nome do "Nome da imagem do produto" sejá o mesmo do "Nome do Produto"
     com a extensão ".jpg"</p>
@@ -66,8 +149,11 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
 
 
 <div class="borda">
-<h1 class="center-content">Cadastro de Produto</h1> 
+<h1 class="center-content">Cadastro de produtos</h1> 
 </br>
+
+
+
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="center-content" enctype="multipart/form-data">
 
         <label for="nome">Nome do Produto:</label>
@@ -79,8 +165,6 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         <label for="preco">Preço:</label>
         <input type="text" id="preco_produto" name="preco_produto"  step="0.01" id="mask_precop" required><br><br>
 
-        <!--o nome da categoria tem que ser exatamente igual ao que esta no banco de dados na "categoria_produto"
-            da tabela produto-->
         <label for="categoria">Categoria do produto</label>
         <select name="categoria_produto" id="categoria_produto" required>
             <option></option>
@@ -122,36 +206,21 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         $imagem_produto = $_POST['imagem_produto'];
         $quantidade_produto = $_POST['quantidade_produto'];
 
-
-
-        // if(isset($_POST['Cadastrar'])){
-        //     $arquivo = $_FILES['botao_up_foto'];
-        
-        //     $arquivonovo = explode('.', $arquivo['name']);
-        
-        //     if($arquivonovo[sizeof($arquivonovo)-1] != 'jpg'){
-        //         die("nao vai dar pra enviar");
-        //     }
-        //     else{
-        //         echo "boa garoto, deu certo";
-        //         move_uploaded_file($arquivo['tmp_name'], $arquivo['name']);
-        //     }
-        // }
-
-
- 
         $sql = "INSERT INTO produto(nome_produto, descricao_produto, preco_produto, categoria_produto, 
                                     pasta_imagem, imagem_produto, quantidade_produto) 
                 VALUES ('$nome_produto', '$descricao_produto', '$preco_produto', '$categoria_produto', 
                         '$pasta_imagem', '$imagem_produto', '$quantidade_produto')";
     
-        if ($mysqli->query($sql) == TRUE) {
-            echo "";
-        } else {
-            echo "Erro ao cadastrar o produto: " . $mysqli->error;
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Seu código existente para processar o formulário...
+        
+            if ($mysqli->query($sql) == TRUE) {
+                echo "<script>openSuccessModal();</script>";
+            } else {
+                echo "<script>openErrorModal('Erro ao cadastrar o produto: " . $mysqli->error . "');</script>";
+            }
         }
     }
-    
     // Fechar a conexão
     $mysqli->close();
     

@@ -45,7 +45,7 @@ else {
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="adm_cadastrar_produto.php"><span>Cadastar produtos</span></a></li>
-            <li><a href="adm_aterar_produto.php"><span> Altera produto</span></a></li>
+            <li><a href="adm_alterar_produto.php"><span> Altera produto</span></a></li>
             <li><a href="adm_apagar_produto.php"><span> apagar produto</span></a></li>
         </ul>
     </li>
