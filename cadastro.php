@@ -7,15 +7,15 @@ include 'cadastro_if.php';
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Protect King</title>
+    <title>Cadastro de Clientes</title>
 
     <?php include 'links.php'; ?>
         
-    <link rel="stylesheet" href="cadastro.css">
-
+    
     <script src="jquery.mask.js"></script>
 
     <script>
+    //a masca nao está funcionando.
     $(document).ready(function(){
         $("#mask_cep").mask("00000-000");
         $("#mask_telefone").mask("00000-0000");
@@ -33,10 +33,49 @@ include 'cadastro_if.php';
         color: red;
         font-size: 14px;
         }
+    
+        body
+        {
+            width: 100vw;
+            height: 100vh;
+        }
+        .content
+        {
+            width: 100vw;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+        .cad_usu
+        {
+            width: 30vw;
+            height:70vh;
+            background-color: grey;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1.5px solid grey;
+            
+        }
+        .btn_cad
+        {
+            width: 7vw;
+            height: 3vh;
+            border-radius: 50px;
+            background-color: orange;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+       
     </style>
+    
+
 </head>
 
 <body>
+    
 <!------------------------------------------------------------------------------------------------->
 <!--Menu-->
 <div class="nav">
@@ -50,7 +89,7 @@ include 'cadastro_if.php';
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Protect King</a>
+        <a class="navbar-brand" href="index.php">Protector Kings</a>
         </div>
         
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -63,8 +102,9 @@ include 'cadastro_if.php';
     </nav>
 </div>
 <!-------------------------------------------------------------------------------------------------->
-
-    <h1>Criar conta</h1>
+<div class="content">
+    <div class="cad_usu">
+    <img src="foto_produto/logo/logo-coroa.svg" alt="logotipo kings">
     <form method="POST" action="cadastro_if.php" onsubmit="return validarSenha();">
         <label>Tipo de Pessoa:</label></br>
         <input type="radio" name="tipo_pessoa" value="1" required onclick="showFields('pessoa_fisica_fields')"> Pessoa Física
@@ -91,7 +131,7 @@ include 'cadastro_if.php';
 
             <label for="estado_pf">Estado:</label>
             <select name="estado_pf">
-                <option value="">Selecione</option>
+                <option value=""></option>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
                 <option value="AP">(AP)</option>
@@ -165,7 +205,6 @@ include 'cadastro_if.php';
 
             <label for="estado_pj">Estado:</label>
             <select name="estado_pj">
-                <option value="">Selecione</option>
                 <option value="AC">(AC)</option>
                 <option value="AL">(AL)</option>
                 <option value="AP">(AP)</option>
@@ -228,9 +267,10 @@ include 'cadastro_if.php';
             <div id="senha-erro" class="erro" style="display: none;">Confirmação de senha incorreta.</div>
         </div>
 
-        <input type="submit" value="Cadastrar" id="cadastrar" style="display: none;">
+        <input class="btn_cad" type="submit" value="Cadastrar-se" id="cadastrar" style="display: none;">
     </form>
-
+    </div>
+</div>
     <script>
         // Função para mostrar/ocultar campos com base no tipo de pessoa selecionado
         function showFields(id) {
