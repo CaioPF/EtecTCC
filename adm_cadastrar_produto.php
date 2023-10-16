@@ -8,7 +8,8 @@
 
     <?php  
     include 'conexao.php';
-    include 'adm_menu.php';
+    include 'links.php';
+    include 'menu.php';
     ?>
      
     <!--CSS-->
