@@ -40,7 +40,7 @@ include 'menu.php';
 		<div class="col-sm-5"><h4 style="padding-top:20px"><?php echo $exibe['nome_produto']; ?></h4></div>
 
         <div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
-            <a href="excluir.php?id=<?php echo $exibe['id_produto']; ?>">	
+            <a href="adm_apagarif_produto.php?id=<?php echo $exibe['id_produto']; ?>">	
             <button class="btn btn-lg btn-block btn-danger">
             <span class="glyphicon glyphicon-remove"> Excluir</span>		
             </button>

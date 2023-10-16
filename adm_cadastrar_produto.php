@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protect King</title>
-    <link rel="stylesheet" href="login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protect King</title>
+<link rel="stylesheet" href="login.css">
 
     <?php  
     include 'conexao.php';
@@ -111,7 +111,7 @@
     //-------------------------------------------------------------------------------
     //Script da mascara 
     $(document).ready(function(){
-        $("#mask_precop").mask("000.000.000.000.000,00");
+        $("#preco_produto").mask("000.000.000.000.000,00");
         
         });
     </script>
@@ -161,15 +161,11 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         <textarea id="descricao_produto" name="descricao_produto" required></textarea><br><br>
 
         <label for="preco">Preço:</label>
-        <input type="text" id="preco_produto" name="preco_produto"  step="0.01" id="mask_precop" required><br><br>
+        <input type="text" id="preco_produto" name="preco_produto"  step="0.01" id="preco_produto" required><br><br>
 
         <label for="categoria">Categoria do produto</label>
         <select name="categoria_produto" id="categoria_produto" required>
-            <option></option>
-            <option value="Câmeras">Câmeras</option>
-            <option value="Controle de acesso">Controle de acesso</option>
-            <option value="Sensor de presença">Sensor de presença</option>
-            <option>#</option>
+            <?php  include 'adm_categoria.php'; ?>
         <select></br></br> 
 
         <label for="pasta">Pasta que a imagem será armazenada </label>
@@ -180,7 +176,7 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
             <option value="sensor de presença">sensor de presença</option>
         <select><br><br>
 
-        <!--botao para subir a imagem direto pra pasta-->
+        <!-- botao para subir a imagem direto pra pasta-->
         <!-- <input type="file" accept="image/*" class="form-control" name="botao_up_foto" required><br> -->
 
         <label for="nome_imagem">Nome da imagem do produto</label>
@@ -203,6 +199,11 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         $pasta_imagem = $_POST['pasta_imagem'];
         $imagem_produto = $_POST['imagem_produto'];
         $quantidade_produto = $_POST['quantidade_produto'];
+
+        $remover1 = '.'; // variável que vai receber o ponto
+        $preco_produto = str_replace($remover1, '', $preco_produto); // substituindo . por vazio
+        $remover2 = ','; // Substitua vírgulas por pontos no preço
+        $preco_produto = str_replace($remover2, '.', $preco_produto); // substituindo , por .
 
         $sql = "INSERT INTO produto(nome_produto, descricao_produto, preco_produto, categoria_produto, 
                                     pasta_imagem, imagem_produto, quantidade_produto) 
