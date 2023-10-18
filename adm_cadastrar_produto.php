@@ -182,7 +182,7 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         <label for="nome_imagem">Nome da imagem do produto</label>
         <input type="text" id="imagem_produto" name="imagem_produto" step="0.01" required><br><br>
 
-        <label for="quantidade">Quantide em estoque</label>
+        <label for="quantidade">Quantidade em estoque</label>
         <input type="text" id="quantidade_produto" name="quantidade_produto" step="0.01" required><br><br>
 
         <input type="submit" value="Cadastrar"></br></br></br>

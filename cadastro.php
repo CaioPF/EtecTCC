@@ -7,7 +7,7 @@ include 'cadastro_if.php';
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro de Clientes</title>
+    <title>Protect King</title>
 
     <?php include 'links.php'; ?>
         
