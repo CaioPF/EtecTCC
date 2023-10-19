@@ -1,0 +1,10 @@
+1 - Precisa arruma os botões de - e + do arquivo carrinho.
+
+2 - palheta de cores dos botões do carrinho e detalhes
+
+3 - Separar o forms da pessoa fisica e o pessoa juridica no arquivo cadastro.
+
+4 - CSS para a pagina de cadastro.
+
+
+

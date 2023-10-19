@@ -5,6 +5,8 @@
 <title>Protector Kings</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<link rel="stylesheet" href="botao_comprar.css">
+
 <?php include 'links.php'; ?>
 
 <style>
@@ -45,7 +47,24 @@ if (!empty($_GET['id_produto'])) {
                 <p><?php echo $exibe['descricao_produto']; ?></p>
                 <p>R$ <?php echo number_format($exibe['preco_produto'], 2, ',', '.'); ?></p>
 
+                <div class="text-center" style="margin-top: 1.5%"; margin-bottom: 1%>
+                <?php if ($exibe['quantidade_produto'] > 0) { ?>
+
+                <a href="carrinho.php?id_produto=<?php echo $exibe['id_produto']; ?>">
                 <button class="btn btn-lg btn-success">Comprar</button>	
+                </a>
+
+                <?php  }
+                        else { ?> 
+
+                <button class="btn btn-block btn-danger" disabled>
+                    <span class="glyphicon glyphicon-remove-circle"> Esgotado</span>
+                </button>
+
+                <?php  } ?>
+                </div>
+
+                
             </div>
         </div>
     </div>

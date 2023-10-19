@@ -1,17 +1,14 @@
 <!-- TEM UMA MENSAGEM DE ERRO QUE NAO SEI O MOTIVO DELA ESTAR ALI MAS O CÓDIGO ESTA FUNCIONANDO NORMALMENTE -->
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protect King</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protect King</title>
 
-    <?php include 'links.php'; ?>
+<?php include 'links.php'; ?>
 
     <style>
         .navbar{
