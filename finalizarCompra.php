@@ -1,5 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protect King</title>
+</head>
+<body>
 <?php
+session_start();
 include 'conexao.php';
+
+// verificando se usuário está logado
+if(empty($_SESSION['ID'])){
+		
+    header('location:login.php'); // enviando para formlogon.php
+    
+}
 
 $data = date('Y-m-d');  // variável que vai pegar a data do dia (ano mês dia - padrão do MySQL)
 $ticket = uniqid();  // gerando um ticket com função uniqid(); gera um ID único
@@ -13,9 +29,14 @@ if (isset($_SESSION['carrinho']) && is_array($_SESSION['carrinho'])) {
         $exibe = $consulta->fetch_assoc();
         $preco = $exibe['preco_produto'];
 
-        $inserir = $mysqli->query("INSERT INTO vendas(ticket, id_login_vendas, id_produto_vendas, quantidade_produto_vendas, valor_produto, data_vendas)  VALUES
+        $inserir = $mysqli->query("INSERT INTO vendas(ticket, login_vendas, id_produto_vendas, quantidade_produto_vendas, preco_vendas, data_vendas)  VALUES
         ('$ticket', '$codigo_usuario', '$codigo_produto', '$quantidade_produto', '$preco', '$data')");
+
+        unset($_SESSION['carrinho'][$codigo_produto]);
     }
 }
 include 'fim.php';
 ?>
+
+</body>
+</html>

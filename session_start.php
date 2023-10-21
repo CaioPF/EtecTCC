@@ -1,11 +1,13 @@
 <!--Esse arquivo faz como que o usuario possa fazer login, ao fazer o login com sucesso o botao de login irá sumir e dar espaço ao botão de sair-->
 
 <?php
-include 'conexao.php';
 session_start();
+include 'conexao.php';
+
 
 if (empty($_SESSION['ID'])) { ?> <!--o "empty" verifica se estavazio, se estiver ele ira mostrar "Cadastro" e "Login" -->
     <!-- Tudo que está aqui dentro irá desaparecer quando o login for efetuado com sucesso -->
+    <Li><a href="carrinho.php" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
     <li><a href="cadastro.php"><span> Cadastro</span></a></li>
     <li><a href="login.php"><span> Login</span></a></li>
 <?php   
@@ -23,10 +25,13 @@ else {
                 ?>
                 <Li><a href="carrinho.php" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
                 <li>
-                    <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">
-                    <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
+                    <a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" 
+                        role="button" aria-haspopup="true" ria-expanded="false">
+                        <?php echo $exibe_usuario['nome_pf']; ?><span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu">                       
+
+                    <ul class="dropdown-menu">  
+                        <li><a href="perfil_usuario.php"><span> Histórico de compras</span></a></li>                     
                         <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
                     </ul>
                 </li>
@@ -42,6 +47,9 @@ else {
                                        WHERE loginn.id_login = '$_SESSION[ID]'");
         $exibe_usuario_adm =  $consulta_adm->fetch_assoc();
         ?>
+
+        <Li><a href="carrinho.php" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
+
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>
         <ul class="dropdown-menu">
             <li><a href="adm_cadastrar_produto.php"><span>Cadastar produtos</span></a></li>

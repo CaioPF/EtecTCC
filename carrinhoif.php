@@ -6,6 +6,10 @@
     <?php
     $total = null; // A variável total começa vazia
 
+    if(!isset($_SESSION['carrinho'])){
+        $_SESSION['carrinho']  = array();
+    }
+
     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade_produto) {
         $consulta = $mysqli->query("SELECT * FROM produto WHERE id_produto ='$id_produto'");
         $exibe =  $consulta->fetch_assoc();
@@ -43,8 +47,6 @@
 			</h4>
 		</div>
 
-
-        
         <div class="col-sm-1 col-xs-offset-right-1" style="padding-top: 20px">
             <!-- Apaga o item do carrinho -->
             <a href="apagacarrinho.php?id_produto=<?php echo $id_produto; ?>">

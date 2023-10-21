@@ -1,8 +1,8 @@
+
+
+
 script que estamos utilizando | POREM!, tem uma versão em teste logo a baixo
                               V
-
-
-
 
 
 
@@ -249,6 +249,41 @@ values -- Sensores de ambiente
 select nome_produto, preco_produto, categoria_produto, imagem_produto from produto;
 
 select * from produto;
+
+-- --------------------------------------------------------------------------------------------------------------------------- --
+
+create table vendas(
+id_vendas int primary key auto_increment,
+ticket varchar(13),
+login_vendas int,
+-- o "id_produto_vendas" é um campo da tabela vendas onde ele mostra o id do produto que foi comprado
+id_produto_vendas int,
+quantidade_produto_vendas int,
+preco_vendas decimal(10,2),
+valor_total decimal(10,2) generated always as ((quantidade_produto_vendas * preco_vendas)) virtual,
+data_vendas date
+);
+
+select * from vendas;
+
+-- --------------------------------------------------------------------------------------------------------------------------- --
+
+-- ATENÇÃO!!!!!!
+-- Essa é uma função que tem que ser criada para a função do usuario poder ver os itens que comprou em sua conta
+
+create view vw_venda
+as select
+    vendas.ticket,
+    vendas.login_vendas,
+    vendas.data_vendas,
+    vendas.id_produto_vendas,
+    vendas.quantidade_produto_vendas,
+    vendas.valor_total,
+    produto.nome_produto
+from vendas
+inner join produto on vendas.id_produto_vendas = produto.id_produto;
+
+-- select * from vw_venda where login_vendas = 1;
 
 -- --------------------------------------------------------------------------------------------------------------------------- --
 
