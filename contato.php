@@ -7,6 +7,45 @@
     <link rel="stylesheet" href="login.css">
 
     <?php include 'links.php'; ?>
+    <style>
+        .bloco1
+        {
+        height:100%;
+        width:100%;
+        position: relative ;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        background-color: rgb(255, 255, 255) ;
+        color: rgb(0, 0, 0); /*troca a cor da letra */
+        border-radius: 2%;
+        border-style: ridge;
+        }
+        .logo1
+        {
+            height:25rem;
+            width:25rem;
+            
+        }
+        .blocofora
+        {
+            
+            margin-left:1%;
+            margin-right:1%;
+        }
+        button
+        {
+           background-color: #daa520;
+           border-color:#daa520;
+        }
+        h3
+        {
+            font-weight: bold
+        }
+        
+
+    </style>
     
 </head>
 
@@ -41,8 +80,65 @@ include 'conexao.php';
     </nav>
 </div>
 <!------------------------------------------------------------------------------------------------->
+<div class="blocofora">
+<div class="jumbotron">
+    <div class ="container">
+  <h1 class="display-4">Ola, Bem vindo!</h1>
+  <p class="lead" style="font-weight: bold">--------------------------------------------------------------------- Quem somos ---------------------------------------------------------------------</br>
+  </br>
+  </br>
+  </br>
+  </p>
+  <hr class="my-4">
+    </div>
+</div>
+</div>
+ <div class ="container ">
+    <div class ="row">
+        <div class ="col-md-4">
+            <h3>Nossa HIstoria</h3>
+            <p>------------------------------------------------
+            ----------------------------------
+            -----------------------------------
+            -------------------</p>
 
-<h1>Estamos em manutenção na página de contato</h1>
+            <button class="btn btn-block "  >
+            <span class="glyphicon"></span>
+            </button>
+        </div>
+
+        
+
+
+        <div class ="col-md-4">
+            <h3>Nossa abordagem</h3>
+            <p>------------------------------------------------
+            ----------------------------------
+            -----------------------------------
+            -------------------</p>
+
+            <button class="btn btn-block "  >
+            <span class="glyphicon"></span>
+            </button>
+        </div>
+
+    
+
+ 
+
+        <div class ="col-md-4">
+            <h3>Proque escolher a Protect King</h3>
+            <p>------------------------------------------------
+            ----------------------------------
+            -----------------------------------
+            -------------------</p>
+
+            <button class="btn btn-block "  >
+            <span class="glyphicon"></span>
+            </button>
+        </div>
+    </div>
+</div>
 
 <?php include 'rodape.html' ?>
 </body>
