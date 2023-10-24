@@ -51,14 +51,14 @@ if (!empty($_GET['id_produto'])) {
                 <?php if ($exibe['quantidade_produto'] > 0) { ?>
 
                 <a href="carrinho.php?id_produto=<?php echo $exibe['id_produto']; ?>">
-                <button class="btn btn-lg btn-success">Comprar</button>	
+                <button class="btn btn-lg btn-success" style="margin-left: -85%;">Comprar</button>	
                 </a>
 
                 <?php  }
                         else { ?> 
 
-                <button class="btn btn-block btn-danger" disabled>
-                    <span class="glyphicon glyphicon-remove-circle"> Esgotado</span>
+                <button class="btn btn-lg btn-danger" style="margin-left: -85%;" disabled>
+                    <span class="glyphicon glyphicon-remove-circle" > Esgotado</span>
                 </button>
 
                 <?php  } ?>
