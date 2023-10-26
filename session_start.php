@@ -47,14 +47,15 @@ else {
                                        WHERE loginn.id_login = '$_SESSION[ID]'");
         $exibe_usuario_adm =  $consulta_adm->fetch_assoc();
         ?>
-
-        <Li><a href="carrinho.php" ><span class="glyphicon glyphicon-shopping-cart"></"> carrinho</span></a></Li>
-
+         <li><a href="listaUsuarios.php"><span>Usuários</span></a></li>
+        <li><a href="listaClientePf.php"><span>Clientes PF</span></a></li>
+        <li><a href="listaClientePj.php"><span>Clientes PJ</span></a></li>
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>
         <ul class="dropdown-menu">
+           
             <li><a href="adm_cadastrar_produto.php"><span>Cadastar produtos</span></a></li>
             <li><a href="adm_alterar_produto.php"><span> Altera produto</span></a></li>
-            <li><a href="adm_apagar_produto.php"><span> apagar produto</span></a></li>
+            <li><a href="adm_apagar_produto.php"><span> Apagar produto</span></a></li>
         </ul>
     </li>
     
