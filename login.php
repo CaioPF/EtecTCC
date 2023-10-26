@@ -66,6 +66,11 @@
 						<a href="cadastro.php" >Cadastre-se</a>
 					</button></br></br></br></br></br></br></br></br>
 				</form>	
+
+				<button type="submit" class="btn btn-secondary btn-lg disabled" role="button" aria-disabled="true" >
+						<a href="esqueci_senha.php" >Esqueci minha senha</a>
+					</button>
+
 			</div>
 		</div>
 	</div>

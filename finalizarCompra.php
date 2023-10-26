@@ -7,8 +7,9 @@
 </head>
 <body>
 <?php
-session_start();
+
 include 'conexao.php';
+include 'menu.php';
 
 // verificando se usuário está logado
 if(empty($_SESSION['ID'])){
