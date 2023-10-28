@@ -47,9 +47,13 @@ else {
                                        WHERE loginn.id_login = '$_SESSION[ID]'");
         $exibe_usuario_adm =  $consulta_adm->fetch_assoc();
         ?>
+        <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Lista de perfil <span class="caret"></span></a>
+        <ul class="dropdown-menu">
          <li><a href="listaUsuarios.php"><span>Usuários</span></a></li>
         <li><a href="listaClientePf.php"><span>Clientes PF</span></a></li>
         <li><a href="listaClientePj.php"><span>Clientes PJ</span></a></li>
+        </ul>
+
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>
         <ul class="dropdown-menu">
            

@@ -15,7 +15,7 @@ width: 70%   ;
 -webkit-box-align: center;
 align-items: center;
 height: 15%;
-background-color: rgb(255, 255, 255) ;
+background-color: #ffffff;
 color: rgb(0, 0, 0); /*troca a cor da letra */
 border-radius: 2%;
 border-style: ridge;
@@ -31,8 +31,12 @@ margin-left: 5%;
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-color: rgba(97, 97, 97, 0.1);
+  background-color: rgba(255, 255, 255, 0.342);
   transition: all 0.3s;
+}
+.bvvvxW:hover::after
+{
+background-color: #ffffff;
 }
 
 .bvvvxW:hover::before {
@@ -52,7 +56,6 @@ margin-left: 5%;
   margin-top: 10%;
   width: 30rem;
 }
-
 
 
   
