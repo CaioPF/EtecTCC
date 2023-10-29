@@ -43,7 +43,7 @@
         {
             font-weight: bold
         }
-        .espaco{
+            .esps{
             width: 100%;
             height: 2vw;
         }
@@ -141,7 +141,7 @@ include 'conexao.php';
             <span class="glyphicon"></span>
             </button>
         </div>
-        <div class="espaco">
+        <div class="esps">
 
         </div>
     </div>

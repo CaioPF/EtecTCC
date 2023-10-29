@@ -24,9 +24,11 @@ $consulta = $mysqli->query('select id_produto,imagem_produto, nome_produto, prec
                             pasta_imagem from produto');
 ?>
 <br><br>
+<div class = "container-fluid" style="margin-left: 4.5%;">
+  <div class = "row">
   <?php   while($exibe = $consulta->fetch_assoc()){  ?>
     <div class = "col-sm-3">
-    <div class = "bvvvxW">
+    <div class = "hoverp">
     </br>
       <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>" class="img-responsive imgm" style=""> <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
 
