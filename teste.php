@@ -1,9 +1,6 @@
 
 <!-- NAO APAGAR ESSE ARQUIVO DE TESTE -->
 
-
-
-
 <?php 
 include 'conexao.php';
 include 'cadastro_if.php';

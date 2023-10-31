@@ -43,6 +43,10 @@
         {
             font-weight: bold
         }
+            .esps{
+            width: 100%;
+            height: 2vw;
+        }
         
 
     </style>
@@ -136,6 +140,9 @@ include 'conexao.php';
             <button class="btn btn-block "  >
             <span class="glyphicon"></span>
             </button>
+        </div>
+        <div class="esps">
+
         </div>
     </div>
 </div>

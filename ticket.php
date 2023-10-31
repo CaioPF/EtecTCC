@@ -17,14 +17,14 @@
 <body>	
 	<?php
 	
-	session_start();
+	include 'conexao.php';	
+	include 'menu.php';
 	
 	if (empty($_SESSION['ID'])) {
 		header('location:login.php');
 	}
 	
-	include 'conexao.php';	
-	include 'menu.php';
+	
 
 	//jogando na variavel $ticket_compra o ticket recebido pelo parametro
 	$ticket_compra = $_GET['ticket'];
