@@ -16,7 +16,7 @@ include 'menu.php';
     <script>
         /* mscara para o preço */	
         $(document).ready(function(){
-        $('#altera_preco').mask('000.000.000.000.000,00', {reverse: true});	
+        $('#altera_preco').mask('0.000.000.000.000.000,00', {reverse: true});	
         });
     </script>
         
@@ -50,7 +50,7 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
 				
 				<h2>Alteração do produto</h2>
                 
-				<form method="post" action="adm_pgif_alterar.php?id_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
+				<form method="post" action="adm_alterar_produto.php?id_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
 				
 					<div class="form-group">
 						<label for="txtisbn">ID do produto</label>
