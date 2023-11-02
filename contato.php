@@ -46,6 +46,7 @@
             .esps{
             width: 100%;
             height: 2vw;
+            
         }
         
 
@@ -84,27 +85,27 @@ include 'conexao.php';
     </nav>
 </div>
 <!------------------------------------------------------------------------------------------------->
+
 <div class="blocofora">
 <div class="jumbotron">
-    <div class ="container">
+<div class="container">
   <h1 class="display-4">Ola, Bem vindo!</h1>
-  <p class="lead" style="font-weight: bold">--------------------------------------------------------------------- Quem somos ---------------------------------------------------------------------</br>
-  </br>
-  </br>
-  </br>
-  </p>
+  <p style="font-weight: bold; text-align: center;">Quem somos?</p>
+  </div>
   <hr class="my-4">
-    </div>
+  <div class="container">
+  <p>Na Protect King, somos apaixonados por tornar as residências mais seguras e inteligentes. Fundada com a missão de proporcionar tranquilidade e comodidade para nossos clientes, somos especialistas em produtos de automação residencial voltados para a segurança.
+ </p>
+ </div>
+
 </div>
 </div>
+
  <div class ="container ">
     <div class ="row">
         <div class ="col-md-4">
             <h3>Nossa HIstoria</h3>
-            <p>------------------------------------------------
-            ----------------------------------
-            -----------------------------------
-            -------------------</p>
+            <p>Criada em 2022, a Protect King surgiu da colaboração de sete jovens recém-formados, com a missão de aprimorar a segurança e o conforto nas residências dos nossos clientes. Ao longo dos anos, nossa empresa tem crescido e se destacado no setor, mantendo um firme compromisso com a inovação e uma atenção especial ao atendimento personalizado aos nossos clientes.</p>
 
             <button class="btn btn-block "  >
             <span class="glyphicon"></span>
@@ -116,10 +117,8 @@ include 'conexao.php';
 
         <div class ="col-md-4">
             <h3>Nossa abordagem</h3>
-            <p>------------------------------------------------
-            ----------------------------------
-            -----------------------------------
-            -------------------</p>
+            <p>Entendemos que cada lar é único, e é por esse motivo que adotamos uma abordagem personalizada para atender as necessidades de segurança de nossos clientes. Com uma equipe altamente qualificada e experiente, estamos prontos para oferecer uma consultoria especializada que considera as particularidades de cada residência. Nosso objetivo é criar soluções sob medida que proporcionem a máxima proteção e tranquilidade para você e sua família.
+</p>
 
             <button class="btn btn-block "  >
             <span class="glyphicon"></span>

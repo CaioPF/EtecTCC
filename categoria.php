@@ -35,16 +35,16 @@ $consulta = $mysqli->query("select id_produto, imagem_produto, nome_produto, pre
 
 
 
-<div class = "container-fluid">
+
   
 <div class="nomecat">
     <h1> <?php echo $cat ?> </h1> <!--esta puxando o nome da categoria -->
   </div>
-
+  <div class = "container-fluid " style="margin-left: 4.5%;"> 
   <div class = "row">
   <?php   while($exibe = $consulta->fetch_assoc()){  ?>
     <div class = "col-sm-3">
-    <div class = "bvvvxW " >
+    <div class = "hoverp " >
       
       <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']);?>" class="img-responsive imgm" > <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
 
