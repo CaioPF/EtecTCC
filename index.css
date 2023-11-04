@@ -42,14 +42,6 @@ margin-left: 5%;
   transform: scale(0.5,0.5);
 }
 
-.nomecat{ 
-  width: 40%;
-  height: 40%; 
-  background-color: rgba(248, 232, 11, 0.247);
-  margin-left: 30%;
-  text-align: center;
-} 
-
 .imgm{
   margin-top: 10%;
   width: 30rem;

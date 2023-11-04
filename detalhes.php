@@ -64,7 +64,6 @@ if (!empty($_GET['id_produto'])) {
                 <?php  } ?>
                 </div>
 
-                
             </div>
         </div>
     </div>

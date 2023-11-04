@@ -4,18 +4,18 @@
     </div>
     
     <?php
-    $total = null; // A variável total começa vazia
+    $total = 0; // Inicialize o total como 0
 
-    if(!isset($_SESSION['carrinho'])){
-        $_SESSION['carrinho']  = array();
+    if (!isset($_SESSION['carrinho'])) {
+        $_SESSION['carrinho'] = array();
     }
 
     foreach ($_SESSION['carrinho'] as $id_produto => $quantidade_produto) {
-        $consulta = $mysqli->query("SELECT * FROM produto WHERE id_produto ='$id_produto'");
+        $consulta = $mysqli->query("SELECT * FROM produto WHERE id_produto = '$id_produto'");
         $exibe =  $consulta->fetch_assoc();
 
         $nome_produto = $exibe['nome_produto'];
-        $preco_produto = number_format(($exibe['preco_produto']), 2, ',', '.');
+        $preco_produto = number_format($exibe['preco_produto'], 2, ',', '.');
         $subtotal = $exibe['preco_produto'] * $quantidade_produto; // Subtotal do item
 
         $total += $subtotal; // Adicione o subtotal ao total
@@ -35,17 +35,17 @@
         </div>
         
         <div class="col-sm-2" style="padding-top: 20px">
-			<!-- Exibe a quantidade atual e botões de adição e subtração -->
-			<h4>
-				<a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'subtract'); return false;">
-					<button class="btn btn-sm btn-primary">-</button>
-				</a>
-				<span id="quantityDisplay<?php echo $id_produto; ?>"><?php echo $quantidade_produto; ?></span>
-				<a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'add'); return false;">
-					<button class="btn btn-sm btn-primary">+</button>
-				</a>
-			</h4>
-		</div>
+            <!-- Exibe a quantidade atual e botões de adição e subtração -->
+            <h4>
+                <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'subtract'); return false;">
+                    <button class="btn btn-sm btn-primary">-</button>
+                </a>
+                <span id="quantityDisplay<?php echo $id_produto; ?>"><?php echo $quantidade_produto; ?></span>
+                <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'add'); return false;">
+                    <button class="btn btn-sm btn-primary">+</button>
+                </a>
+            </h4>
+        </div>
 
         <div class="col-sm-1 col-xs-offset-right-1" style="padding-top: 20px">
             <!-- Apaga o item do carrinho -->
@@ -59,6 +59,10 @@
     </div>
     
     <?php } ?>
+
+    <div class="row text-center" style="margin-top: 15px;">
+        <h1>Total: R$ <span id="totalAmount"><?php echo number_format($total, 2, ',', '.'); ?></span></h1>
+    </div>
 </div>
 
 <script>
@@ -79,19 +83,11 @@ function updateQuantity(id_produto, action) {
     // Atualize o elemento de exibição com a nova quantidade
     quantityDisplay.innerHTML = currentQuantity;
 
-    // Agora, você pode atualizar o carrinho no servidor (você precisa implementar essa lógica)
-    // Certifique-se de enviar o id_produto e a nova quantidade para o servidor.
+    // Atualize o valor total
+    var preco_produto = parseFloat('<?php echo $exibe['preco_produto']; ?>');
+    var subtotal = currentQuantity * preco_produto;
+    document.getElementById('totalAmount').textContent = subtotal.toFixed(2);
 
-    // Exemplo de como você pode usar AJAX para atualizar o carrinho no servidor:
-    // var xhr = new XMLHttpRequest();
-    // xhr.open('POST', 'atualizarcarrinho.php', true);
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // xhr.send('id_produto=' + id_produto + '&quantidade=' + currentQuantity);
-
-    // Atualize os botões de adição e subtração, se necessário
-    if (currentQuantity === 0) {
-        // Desative o botão de subtração quando a quantidade é 0
-        // Você pode adicionar mais lógica aqui conforme necessário
-    }
+    // Agora, você pode atualizar o carrinho no servidor (você precisa implementar essa lógica).
 }
 </script>

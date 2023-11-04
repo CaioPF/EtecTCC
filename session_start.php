@@ -68,10 +68,8 @@ else {
             <?php echo $exibe_usuario_adm['nome_func']; ?><span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-            <button  class="btn btn-block  btn-danger" >Administrador</button>                   
-            
+            <button  class="btn btn-block  btn-danger" >Administrador</button>
             <li><a href="sair.php"><span class="glyphicon glyphicon-log-out"> Sair</span></a></li>
-            
         </ul>
     </li> 
     <?php

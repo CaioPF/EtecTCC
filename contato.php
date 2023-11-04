@@ -118,7 +118,7 @@ include 'conexao.php';
         <div class ="col-md-4">
             <h3>Nossa abordagem</h3>
             <p>Entendemos que cada lar é único, e é por esse motivo que adotamos uma abordagem personalizada para atender as necessidades de segurança de nossos clientes. Com uma equipe altamente qualificada e experiente, estamos prontos para oferecer uma consultoria especializada que considera as particularidades de cada residência. Nosso objetivo é criar soluções sob medida que proporcionem a máxima proteção e tranquilidade para você e sua família.
-</p>
+z</p>
 
             <button class="btn btn-block "  >
             <span class="glyphicon"></span>

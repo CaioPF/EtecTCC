@@ -33,7 +33,7 @@ $consulta = $mysqli->query("SELECT * FROM produto WHERE nome_produto LIKE CONCAT
 //seguinte código "OR nome_marca_produto LIKE CONCAT('%','$pesquisa','%')" depois do "CONCAT('%','$pesquisa','%')"
 // mas tera que fazer um inner join.
 if ($consulta->num_rows == 0) {
-    header("location: erro_busca.php");
+    header("location:erro_busca.php");
     exit;
 }
 

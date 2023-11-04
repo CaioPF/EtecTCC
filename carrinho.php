@@ -50,16 +50,12 @@ else {
     //mostrando o carrinho	vazio	
     include 'carrinhoif.php';
 }?>
-    <!--exibindo o valor da variavel total da compra-->
-    <div class="row text-center" style="margin-top: 15px;">
-        <h1>Total: R$ <?php echo number_format($total, 2,',','.'); ?> </h1>
-    </div>
-
     <div class="row text-center" style="margin-top: 15px;">
         <a href="index.php"><button class="btn btn-lg btn-primary">Continuar Comprando</button></a>
 
         <?php if(count($_SESSION['carrinho']) > 0) { ?>
-        <a href="finalizarCompra.php"><button class="btn btn-lg btn-success">Finalizar Compra</button></a>
+        <a href="pagamento.php"><button class="btn btn-lg btn-success">Continuar</button></a>
+        
         
         <?php }?>
     </div>

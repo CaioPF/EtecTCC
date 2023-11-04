@@ -5,7 +5,7 @@
 
   <a href="carrinho.php?id_produto=<?php echo $exibe['id_produto']; ?>">
   <button class="btn btn-three">
-    <span class="glyphicon glyphicon-shopping-cart"> Comprar</span>
+    <span class="glyphicon glyphicon-shopping-cart"> Carrinho</span>
   </button>
   </a>
 

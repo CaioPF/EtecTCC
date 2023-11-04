@@ -22,9 +22,20 @@ else {
 ?>
 <!-- <title>?php echo $cat ?></title> -->
 
-<link rel="stylesheet" href="index.css">
-
 <?php include 'links.php'; ?>
+
+<style>
+  .nomecat{ 
+  width: 40%;
+  height: 40%; 
+  background-color: rgba(248, 232, 11, 0.247);
+  margin-left: 30%;
+  text-align: center;
+  } 
+</style>
+
+
+
 </head>
 
 <body>
@@ -33,13 +44,10 @@ else {
 $consulta = $mysqli->query("select id_produto, imagem_produto, nome_produto, preco_produto, quantidade_produto, pasta_imagem from produto where categoria_produto = '$cat'");
 ?>
 
-
-
-
-  
-<div class="nomecat">
+  <div class="nomecat">
     <h1> <?php echo $cat ?> </h1> <!--esta puxando o nome da categoria -->
-  </div>
+  </div><br><br><br>
+
   <div class = "container-fluid " style="margin-left: 4.5%;"> 
   <div class = "row">
   <?php   while($exibe = $consulta->fetch_assoc()){  ?>
