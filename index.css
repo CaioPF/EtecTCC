@@ -7,7 +7,7 @@
   margin-right:5%;
 }
 
-.bvvvxW {/*imagens index*/
+.hoverp {/*imagens index*/
 position: relative ;
 display: flex;
 flex-direction: column;
@@ -23,7 +23,7 @@ margin-bottom: 10%;
 margin-left: 5%;
 }
 
-.bvvvxW::before {
+.hoverp::before {
   content: '';
   position: absolute;
   top: 0;
@@ -35,7 +35,7 @@ margin-left: 5%;
   transition: all 0.3s;
 }
 
-.bvvvxW:hover::before {
+.hoverp:hover::before {
   opacity: 0 ;
   transform: scale(0.5,0.5);
 }
@@ -52,5 +52,6 @@ margin-left: 5%;
   margin-top: 10%;
   width: 30rem;
 }
+
 
   
