@@ -35,16 +35,16 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row" style="margin-top: 15px;">
+        <div class="row" style="margin-left: 1vw;">
             <h1>Histórico de compras</h1>
         </div>
 
-        <div class="row" style="margin-top: 15px;">
-            <div class="col-sm-1 col-sm-offset-1"><h4>Data</h4></div>
-            <div class="col-sm-2"><h4>Ticket</h4></div>
-            <div class="col-sm-5"><h4>Produto</h4></div>
-            <div class="col-sm-1"><h4>Quantidade</h4></div>
-            <div class="col-sm-2"><h4>Valor total</h4></div>
+        <div class="row" style="margin-top: 3vw;">
+            <div class="col-sm-1 col-sm-offset-1"><h4><b>Data</b></h4></div>
+            <div class="col-sm-2"><h4><b>Ticket</b></h4></div>
+            <div class="col-sm-5"><h4><b>Produto</b></h4></div>
+            <div class="col-sm-1"><h4><b>Quantidade</b></h4></div>
+            <div class="col-sm-2"><h4><b>Valor</b></h4></div>
         </div>
 
         <?php 
@@ -54,26 +54,22 @@
             $total += $exibe_venda["valor_total"];
         ?>
 
-        <div class="row" style="margin-top: 15px;">
+        <div class="row" style="margin-top: 1vw;">
             <div class="col-sm-1 col-sm-offset-1"><?php echo date('d/m/Y', strtotime($exibe_venda['data_vendas'])); ?></div>
             <div class="col-sm-2"><?php echo $exibe_venda['ticket']; ?></div>
             <div class="col-sm-5"><?php echo $exibe_venda['nome_produto']; ?></div>
             <div class="col-sm-1"><?php echo $exibe_venda['quantidade_produto_vendas']; ?></div>
             <div class="col-sm-2"><?php echo number_format($exibe_venda['valor_total'], 2, ',', '.'); ?></div>	
         </div>	
+        <hr>
     
         <?php }
         ?><br><br>
-
-        <div class="row" style="margin-top: 15px;">
-            <h1>Valor total:</h1>
+        <div style="text-align: center">
+        <div  style="margin-top: 1vw;">
+            <h1><b>Valor total:</b>  R$ <?php echo number_format($total, 2, ',', '.'); ?></h1>
         </div>
 
-        <div class="row" style="margin-top: -64px;">
-            <div class="col-sm-2 col-sm-offset-2 text-center">
-                <h2>R$ <?php echo number_format($total, 2, ',', '.'); ?></h2>
-            </div>
-        </div>
 
     </div>
 	
