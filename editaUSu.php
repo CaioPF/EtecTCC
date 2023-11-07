@@ -27,7 +27,18 @@ if($result->num_rows > 0)
     <title>Protect King</title>
 
     <?php include 'links.php'; ?>
-        
+        <style>
+            .custom-btn:hover 
+        {
+            background-color: #222; /* Cor um pouco mais escura quando hover */
+        }
+        .center-content {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
+        }
+
+        </style>
     
 
 </head>
@@ -61,8 +72,8 @@ if($result->num_rows > 0)
     <div class="content">
     
        
-    <form action="listaUsuarios.php" method="POST">
-    <fieldset disabled>
+    <form action="listaUsuarios.php" method="POST" class="center-content">
+    <fieldset enable>
         <legend>Editar Usuários</legend>
         <div class="mb-3">
             <label for="Id_login">ID:</label>

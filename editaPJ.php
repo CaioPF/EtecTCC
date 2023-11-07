@@ -27,7 +27,15 @@ if($result->num_rows > 0)
     <title>Protect King</title>
 
     <?php include 'links.php'; ?>
-        
+    
+    <style>
+        .center-content {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
+        }
+
+    </style>
     
 
 </head>
@@ -61,8 +69,8 @@ if($result->num_rows > 0)
     <div class="content">
     
        
-    <form>
-    <fieldset disabled>
+    <form action="listaClientePj.php" method="post" class="center-content">
+    <fieldset enable>
         <legend>Editar Cliente PJ</legend>
         <div class="mb-3">
             <label for="nome_fantasia_pj">Nome Fantasia:</label>

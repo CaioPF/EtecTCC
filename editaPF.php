@@ -27,61 +27,123 @@ if($result->num_rows > 0)
     <title>Protect King</title>
 
     <?php include 'links.php'; ?>
+        <style>
+            .custom-btn
+        {
+            background-color: #daa520;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
         
+        }
+.center-conten
+{
+    
+    margin: 0 auto;
+    max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
+}
+
+.bvvvxW {/*imagens index*/
+    position: relative ;
+    display: flex;
+    flex-direction: column;
+    width:30%; 
+    height: 10;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255) ;
+    color: rgb(0, 0, 0); /*troca a cor da letra */
+    border-radius: 2%;
+    border-style: ridge;
+    margin-top:3% ;
+    margin-bottom: 10%;
+    margin-left: 34%;
+
+    
+    
+}
+
+.logo{
+    margin-top: 10%;
+    height: 25%;
+    width: 25%;
+}
+
+
+.btn-edit
+ {
+     background-color: #daa520;  
+ }
+ 
+.btn-editB
+ {
+     background-color: #000000; 
+     color: #FFFFFF;
+    
+
+ }
+ .button
+ {
+    display: block;
+    margin: 0 auto; 
+    margin-right: 10px;
+}
+
+        </style>
     
 
 </head>
 
 <body>
     
-        <!------------------------------------------------------------------------------------------------->
-        <!--Menu-->
-        <div class="nav">
-        <!-- <nav class="navbar navbar-inverse"> Apague o inverse para estar alterando a cor do menu de navegação-->
-        <div class="container-fluid"><!--Essa linha cria uma borda entre o menu e o texto-->
-            
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>              <!--Esse é o botão hamburguer que aparece quando o site-->
-           
-            </button>
-            <a class="navbar-brand">Protector Kings</a>
-            </div>
-            
-            
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <?php  include 'session_start.php';?>
-            </ul>
-            </div>
-        </div>
-        </nav>
-    </div>
-    <!-------------------------------------------------------------------------------------------------->
-    <div class="box">
-        <form action="saveEdit.php" method="POST">
-            <fieldset disabled>
-                <legend>Editar Cliente PF</legend>
-                    <div class="mb-3">
-                        <label for="nome_pf">Nome:</label>
+    <div class="Conteiner" >
+	<div class="container-fluid">
+		<div class="bvvvxW">
+        <img src="foto_produto/logo/logo-coroa.svg" class="logo">
+			</br></br><h2 class="LU">Editar Cliente</h2></br>
+				<form  method="POST" action="saveEditPf.php" >
+
+					<div class="mb-3">
+                        <label for="nome_pf" class="form-label">Nome</label>
                         <input type="text" name="nome_pf" value="<?php echo $nome_pf ?>" br>
-
+					</div>
+					
+					<div class="form-group">
                         <label for="sobrenome_pf">Sobrenome:</label>
-                        <input type="text" name="sobrenome_pf" value="<?php echo $sobrenome_pf ?>" br>
+                        <input type="text" class="form-control" placeholder="Digite o nome"  name="sobrenome_pf" value="<?php echo $sobrenome_pf ?>" br>
+					</div>
 
+                    <div class="form-group">
                         <label for="nascimento_pf">Data de Nascimento:</label>
                         <input type="date" name="nascimento_pf" value="<?php echo $nascimento_pf ?>" ><br>
+					</div>
 
+                    <div class="form-group">
                         <label for="cpf_pf">CPF:</label>
                         <input type="number" name="cpf_pf" maxlength="11" id="mask_cpf" value="<?php echo $cpf_pf ?>">
                         <div id="cpf-erro" class="erro" style="display: none;">CPF </div><br>
+					</div>
+                    </br></br>
+				   <div  class="button">
+                        <button type="submit" class="btn-edit btn btn-lg btn-warning">
+                            <span> Enviar</span>
+                        </button>
+                        <button type="submit" class="btn-editB btn btn-lg btn-white">
+                            <span> Voltar</span>
+                        </button>
+						    
                     </div>
-                <button type="submit" name="update" id="update" class="btn btn-warning">Enviar</button>
-            </fieldset>
-        </form>
-    </div>
+					</button></br></br></br></br>
 
-      
-    <?php include 'rodape.html' ?>
+				</form>	
+
+				
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
