@@ -20,6 +20,7 @@ use tcc_ecommerce;
 -- drop database tcc_ecommerce;
 
 select * from loginn;
+
 select * from pessoa;
 select * from tipo_usuario;
 select * from pessoa_fisica;

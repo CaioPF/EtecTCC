@@ -87,6 +87,8 @@
                 <th scope="col">ID</th>
                 <th scope="col">Email </th>
                 <th scope="col">Senha</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -97,7 +99,7 @@
                         echo "<td>" .$consulta_usuario["id_login"]."</td>";
                         echo "<td>" .$consulta_usuario["email"]."</td>";
                         echo "<td>" .$consulta_usuario["senha"]."</td>";
-                    echo "<td>
+                        echo "<td>
                   
                             <a  class='btn-edit btn btn-sm btn-warning' href='editaUsu.php?id_login=$consulta_usuario[id_login]'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>

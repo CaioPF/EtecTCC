@@ -3,14 +3,15 @@ include 'conexao.php';
 
 $id_pf =$_GET['id_pf'];
 
-$sql = "SELECT * FROM  pessoa_fisica where id_pf = $id_pf";
+$sqlSelect = "SELECT * FROM  pessoa_fisica where id_pf = $id_pf";
 
-$result = $mysqli->query($sql);
+$result = $mysqli->query($sqlSelect);
 
 if($result->num_rows > 0)
 {
     while($consulta_usuario = mysqli_fetch_assoc($result))
     {
+       
         $nome_pf = $consulta_usuario ['nome_pf'];
         $sobrenome_pf = $consulta_usuario ['sobrenome_pf'];
         $nascimento_pf = $consulta_usuario ['nascimento_pf'];
@@ -61,9 +62,6 @@ if($result->num_rows > 0)
     margin-top:3% ;
     margin-bottom: 10%;
     margin-left: 34%;
-
-    
-    
 }
 
 .logo{
@@ -91,6 +89,12 @@ if($result->num_rows > 0)
     margin: 0 auto; 
     margin-right: 10px;
 }
+.center-content {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
+        }
+
 
         </style>
     
@@ -103,11 +107,11 @@ if($result->num_rows > 0)
 	<div class="container-fluid">
 		<div class="bvvvxW">
         <img src="foto_produto/logo/logo-coroa.svg" class="logo">
-			</br></br><h2 class="LU">Editar Cliente</h2></br>
-				<form  method="POST" action="saveEditPf.php" >
+			</br><h2 class="LU">Editar Cliente</h2></br>
+				<form  method="POST" action="saveEditPf.php" class="center-content" enctype="multipart/form-data" >
 
 					<div class="mb-3">
-                        <label for="nome_pf" class="form-label">Nome</label>
+                        <label for="nome_pf" class="form-label">Nome:</label>
                         <input type="text" name="nome_pf" value="<?php echo $nome_pf ?>" br>
 					</div>
 					
@@ -127,8 +131,10 @@ if($result->num_rows > 0)
                         <div id="cpf-erro" class="erro" style="display: none;">CPF </div><br>
 					</div>
                     </br></br>
+                   
 				   <div  class="button">
-                        <button type="submit" class="btn-edit btn btn-lg btn-warning">
+                        <input type="hidden" name="id_pf" value="<?php echo $id_pf ?> ">
+                        <button type="submit" name="update" id="update" class="btn-edit btn btn-lg btn-warning">
                             <span> Enviar</span>
                         </button>
                         <button type="submit" class="btn-editB btn btn-lg btn-white">
@@ -136,7 +142,8 @@ if($result->num_rows > 0)
                         </button>
 						    
                     </div>
-					</button></br></br></br></br>
+
+					</button></br>
 
 				</form>	
 

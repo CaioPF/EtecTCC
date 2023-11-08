@@ -83,11 +83,11 @@
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">ID</th>
+                <th scope="col">Id</th>
                 <th scope="col">Nome Fantasia</th>
                 <th scope="col">Razão Social</th>
-                <th scope="col">CNPJ</th>
-                <th scope="col">DATA DE ABERTURA</th>
+                <th scope="col">Cnpj</th>
+                <th scope="col">Data de Abertura</th>
                 </tr>
             </thead>
             <tbody>

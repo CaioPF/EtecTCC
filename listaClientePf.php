@@ -61,7 +61,7 @@
             display: flex;
             justify-content: right;
             gap: .1%;
-            margin-top: -45px; /* Mover 10 pixels para cima */
+            margin-top: -80px; /* Mover 10 pixels para cima */
             margin-left: 80px;
         }
     </style>
@@ -78,7 +78,7 @@
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                 </button>
-            
+            </div>
     </div>
     <?php include'conexao.php'; ?>
     <div class="m-5" table-bg >
@@ -87,8 +87,11 @@
                 <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome </th>
+                <th scope="col">Sobrenome </th>
                 <th scope="col">Nascimento</th>
                 <th scope="col">CPF</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,6 +101,7 @@
                     echo "<tr>";
                     echo "<td>" .$consulta_usuario["id_pf"]."</td>";
                     echo "<td>" .$consulta_usuario["nome_pf"]."</td>";
+                    echo "<td>" .$consulta_usuario["sobrenome_pf"]."</td>";
                     echo "<td>" .$consulta_usuario["nascimento_pf"]."</td>";
                     echo "<td>" .$consulta_usuario["cpf_pf"]."</td>";
                   

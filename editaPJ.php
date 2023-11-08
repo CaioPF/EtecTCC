@@ -29,7 +29,71 @@ if($result->num_rows > 0)
     <?php include 'links.php'; ?>
     
     <style>
-        .center-content {
+          .custom-btn
+        {
+            background-color: #daa520;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 5px;
+        
+        }
+.center-conten
+{
+    
+    margin: 0 auto;
+    max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
+}
+
+.bvvvxW {/*imagens index*/
+    position: relative ;
+    display: flex;
+    flex-direction: column;
+    width:30%; 
+    height: 10;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255) ;
+    color: rgb(0, 0, 0); /*troca a cor da letra */
+    border-radius: 2%;
+    border-style: ridge;
+    margin-top:3% ;
+    margin-bottom: 10%;
+    margin-left: 34%;
+
+    
+    
+}
+
+.logo{
+    margin-top: 10%;
+    height: 25%;
+    width: 25%;
+}
+
+
+.btn-edit
+ {
+     background-color: #daa520;  
+ }
+ 
+.btn-editB
+ {
+     background-color: #000000; 
+     color: #FFFFFF;
+    
+
+ }
+ .button
+ {
+    display: block;
+    margin: 0 auto; 
+    margin-right: 10px;
+}
+        .center-content
+        {
             text-align: center;
             margin: 0 auto;
             max-width: 50%; /* Define a largura máxima para evitar que o formulário fique muito largo */
@@ -40,55 +104,54 @@ if($result->num_rows > 0)
 
 </head>
 
-<body>
-    
-        <!------------------------------------------------------------------------------------------------->
-        <!--Menu-->
-        <div class="nav">
-        <!-- <nav class="navbar navbar-inverse"> Apague o inverse para estar alterando a cor do menu de navegação-->
-        <div class="container-fluid"><!--Essa linha cria uma borda entre o menu e o texto-->
-            
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>              <!--Esse é o botão hamburguer que aparece quando o site-->
-           
-            </button>
-            <a class="navbar-brand">Protector Kings</a>
-            </div>
-            
-            
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <?php  include 'session_start.php';?>
-            </ul>
-            </div>
-        </div>
-        </nav>
-    </div>
-    <!-------------------------------------------------------------------------------------------------->
-    <div class="content">
-    
-       
-    <form action="listaClientePj.php" method="post" class="center-content">
-    <fieldset enable>
-        <legend>Editar Cliente PJ</legend>
-        <div class="mb-3">
-            <label for="nome_fantasia_pj">Nome Fantasia:</label>
-            <input type="text" name="nome_fantasia_pj" value="<?php echo $nome_fantasia_pj ?>" ><br>
+<body>  
+    <div class="Conteiner" >
+	<div class="container-fluid">
+		<div class="bvvvxW">
+        <img src="foto_produto/logo/logo-coroa.svg" class="logo">
+			</br><h2 class="LU">Editar Cliente</h2></br>
+				<form  method="POST" action="saveEditPj.php" class="center-content" enctype="multipart/form-data" >
 
-            <label for="razao_social_pj">Razão Social:</label>
-            <input type="text" name="razao_social_pj" value="<?php echo $razao_social_pj ?>" ><br>
+					<div class="mb-3">
+                         <label for="nome_fantasia_pj">Nome Fantasia:</label>
+                         <input type="text" name="nome_fantasia_pj" value="<?php echo $nome_fantasia_pj ?>" ><br>
+					</div>
+					
+					<div class="form-group">
+                         <label for="razao_social_pj">Razão Social:</label>
+                         <input type="text" name="razao_social_pj" value="<?php echo $razao_social_pj ?>" ><br>
 
-            <label for="cnpj_pj">CNPJ:</label>
-            <input type="number" name="cnpj_pj" maxlength="14" id="mask_cnpj_pj" value="<?php echo $cnpj_pj ?>"><br>
+					</div>
 
-            <label for="abertura_pj">Data de Abertura:</label>
-            <input type="date" name="abertura_pj" id="mask_abertura_pj" value="<?php echo $abertura_pj ?>"><br>
+                    <div class="form-group">
+                         <label for="cnpj_pj">CNPJ:</label>
+                        <input type="number" name="cnpj_pj" maxlength="14" id="mask_cnpj_pj" value="<?php echo $cnpj_pj ?>"><br>
+                    </div>
 
-        </div>
-        <button type="submit" class="btn btn-warning">Enviar</button>
-    </fieldset>
-    </form>
+                    <div class="form-group">
+                         <label for="abertura_pj">Data de Abertura:</label>
+                         <input type="date" name="abertura_pj" id="mask_abertura_pj" value="<?php echo $abertura_pj ?>"><br>
+					</div>
+                    </br></br>
+				   <div  class="button">
+                        <input type="hidden" name="id_pj" value="<?php echo $id_pj ?>">
+                        <button type="submit" name="update" id="update" class="btn-edit btn btn-lg btn-warning">
+                            <span> Enviar</span>
+                        </button>
+                        <button type="submit" class="btn-editB btn btn-lg btn-white">
+                            <span> Voltar</span>
+                        </button>
+						    
+                    </div>
+					</button></br>
+
+				</form>	
+
+				
+			</div>
+		</div>
+	</div>
+</div>
 
 
   
