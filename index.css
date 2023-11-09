@@ -11,10 +11,10 @@
 position: relative ;
 display: flex;
 flex-direction: column;
-width: 70%   ; 
+width:5vw ; 
 -webkit-box-align: center;
 align-items: center;
-height: 15%;
+height: 10vw;
 background-color: rgb(255, 255, 255) ;
 color: rgb(0, 0, 0); /*troca a cor da letra */
 border-radius: 2%;
@@ -51,6 +51,19 @@ margin-left: 5%;
 .imgm{
   margin-top: 10%;
   width: 30rem;
+}
+.formataçao
+{
+  display: inline-block;
+}
+
+.prod-c
+{
+width: 20vw;
+height: 10vw;
+overflow: hidden; 
+background-color: aliceblue;
+display: inline-block;
 }
 
 
