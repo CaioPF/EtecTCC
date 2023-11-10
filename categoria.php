@@ -13,14 +13,13 @@ include 'menu.php';
 if (isset($_GET['cat'])) {
     // A variável 'cat' está definida na URL (categoria.php)
     $cat = $_GET['cat'];
-    // Execute o código relacionado à categoria aqui
+    
 } 
 else {
-    header("Location: index.php"); // Redireciona para a página inicial
+    header("Location: index.php"); 
     exit;
 }
 ?>
-<!-- <title>?php echo $cat ?></title> -->
 
 <?php include 'links.php'; ?>
 
@@ -34,9 +33,8 @@ else {
   } 
 </style>
 
-
-
 </head>
+
 
 <body>
 <?php
@@ -51,7 +49,7 @@ $consulta = $mysqli->query("select id_produto, imagem_produto, nome_produto, pre
   <div class = "container-fluid " style="margin-left: 4.5%;"> 
   <div class = "row">
   <?php   while($exibe = $consulta->fetch_assoc()){  ?>
-    <div class = "col-sm-3">
+    <div class = "col-sm-2">
     <div class = "hoverp " >
       
       <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']);?>" class="img-responsive imgm" > <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
@@ -73,6 +71,9 @@ $consulta = $mysqli->query("select id_produto, imagem_produto, nome_produto, pre
     </div>
     <?php } ?>
 </div>
-</div>
+</div><br><br>
+
+<?php include 'rodaPE.html'; ?>
+
 </body>
 </html>

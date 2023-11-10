@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <!-- Adicione seus estilos e scripts aqui, se necessário -->
+</head>
+<body>
+
 <div class="container-fluid">
     <div class="row text-center" style="margin-top: 15px;">
         <h1>Carrinho de Compras</h1>
@@ -63,6 +73,11 @@
     <div class="row text-center" style="margin-top: 15px;">
         <h1>Total: R$ <span id="totalAmount"><?php echo number_format($total, 2, ',', '.'); ?></span></h1>
     </div>
+
+    <!-- Botão para atualizar o carrinho -->
+    <div class="row text-center" style="margin-top: 15px;">
+        <button class="btn btn-lg btn-success" onclick="atualizarCarrinho()">Atualizar Carrinho</button>
+    </div>
 </div>
 
 <script>
@@ -90,4 +105,12 @@ function updateQuantity(id_produto, action) {
 
     // Agora, você pode atualizar o carrinho no servidor (você precisa implementar essa lógica).
 }
+
+function atualizarCarrinho() {
+    // Você pode redirecionar para a mesma página para atualizar o carrinho
+    window.location.reload();
+}
 </script>
+
+</body>
+</html>

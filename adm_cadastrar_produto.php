@@ -180,7 +180,8 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
         <!-- <input type="file" accept="image/*" class="form-control" name="botao_up_foto" required><br> -->
 
         <label for="nome_imagem">Nome da imagem do produto</label>
-        <input type="text" id="imagem_produto" name="imagem_produto" step="0.01" required><br><br>
+        <input type="text" id="imagem_produto" name="imagem_produto" step="0.01" placeholder="  ex: camera 4k.jpg" 
+            equired><br><br>
 
         <label for="quantidade">Quantidade em estoque</label>
         <input type="text" id="quantidade_produto" name="quantidade_produto" step="0.01" required><br><br>
