@@ -29,6 +29,7 @@ include 'menu.php';
 
 <body>
 <?php
+
 //se o usuário tentar acessar um dos arquivos pela URL ou sem estar logado como ADM, ele será redirecionado para a index
 if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
     header('location: index.php');
@@ -50,7 +51,7 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
 				
 				<h2>Alteração do produto</h2>
                 
-				<form method="post" action="adm_alterar_produto.php?id_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
+				<form method="post" action="adm_pgif_alterar.php?id_altera=<?php echo $cd; ?>" name="incluiProd" enctype="multipart/form-data">
 				
 					<div class="form-group">
 						<label for="txtisbn">ID do produto</label>
@@ -95,13 +96,14 @@ if (empty($_SESSION['Status']) || $_SESSION['Status'] != 'ADM'){
                     </div>
 
                     <button type="submit" class="btn btn-lg btn-default">
-                        <span class="glyphicon glyphicon-pencil"> Alterar </span>	
+                        <span class="glyphicon glyphicon-pencil"> Alterar </span>
                     </button>
 				
 			    </form>
 			</div>
 		</div>
 	</div>
+    
 	
 <?php include 'rodape.html' ?>
 
