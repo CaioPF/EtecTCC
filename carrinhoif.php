@@ -15,6 +15,7 @@
             margin-top: 2%;
             width: 100%;
             display: inline-block;
+            min-height: 10vw;
 
         }
     </style>

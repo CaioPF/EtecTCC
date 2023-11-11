@@ -84,7 +84,7 @@ else {
         <?php }?>
     </div>
 </div>
-</br></br></br></br></br></br></br></br></br></br></br></br></br>
+
 <?php include 'rodape.html'; ?>
 </body>
 </html>
