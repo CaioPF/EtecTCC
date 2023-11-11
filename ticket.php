@@ -71,7 +71,7 @@
         </div>
 
 
-    </div>
+    </div><br>
 	
     <?php include 'rodape.html'; ?>
 </body>

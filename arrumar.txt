@@ -6,7 +6,5 @@
 
 4 - CSS para a pagina de cadastro.
 
-5 - Arrumar o erro ao apertar o botao "finalizar compras" 
-
 
 
