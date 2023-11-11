@@ -29,10 +29,7 @@
 {
   background-color: #f4f4f4 !important;
 }
-.prod-selec
-{
-    
-}
+
 	</style>
 </head>
 

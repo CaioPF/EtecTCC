@@ -18,6 +18,12 @@
             min-height: 10vw;
 
         }
+        .au-quant
+        {
+            border-color: #daa520;
+            background-color: #ffffff;
+            color: #daa520;
+        }
     </style>
 </head>
 
@@ -67,13 +73,13 @@
                         <!-- Exibe a quantidade atual e botões de adição e subtração -->
                         <h4>
                             <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'subtract'); return false;">
-                                <button class="btn btn-sm btn-primary">-</button>
+                                <button class="btn btn-sm au-quant">-</button>
                             </a>
                             <span id="quantityDisplay<?php echo $id_produto; ?>">
                                 <?php echo $quantidade_produto; ?>
                             </span>
                             <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'add'); return false;">
-                                <button class="btn btn-sm btn-primary" onclick="atualizarCarrinho()">+</button>
+                                <button class="btn btn-sm au-quant" onclick="atualizarCarrinho()">+</button>
                             </a>
                         </h4>
                     </div>
