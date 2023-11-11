@@ -40,7 +40,7 @@
       <!----------------------------------------------------------------------------------------------------------------------->
       <ul class="nav navbar-nav navbar-right">
         <?php  include 'session_start.php';?>
-        <li><a href="contato.php">Sobre nós</a></li>
+        <li><a href="sobre_nos.php">Sobre nós</a></li>
       </ul>
     </div>
   </div>
