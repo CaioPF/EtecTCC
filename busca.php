@@ -1,5 +1,6 @@
-<!doctype html>
 
+<?php ob_start(); ?>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
@@ -22,9 +23,8 @@ include 'conexao.php';
 include 'menu.php';
 
 if(empty($_GET['txtbuscar'])){
-    header("location: index.php");
+    header("location:index.php");
     exit;
-
 }
 
 $pesquisa = $_GET['txtbuscar'];
@@ -64,3 +64,4 @@ if ($consulta->num_rows == 0) {
 	
 </body>
 </html>
+<?php ob_start(); ?>

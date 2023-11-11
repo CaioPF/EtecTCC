@@ -26,11 +26,14 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
-			<h2>Nenhum produto foi encontrado!</h2>
+		</br></br></br></br></br></br></br>
+			<h2>Produto não encontrado!</h2>
 		</div>
 	</div>
 </div>
 
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 <?php include 'rodape.html' ?>
+
 </body>
 </html>
