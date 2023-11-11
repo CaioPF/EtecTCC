@@ -62,22 +62,29 @@ if (!empty($_GET['id_produto'])) {
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-1">
-                <h1>Detalhes do Produto</h1>
+
+                </br></br></br>
                 <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']);?>" class="img-responsive imgm">
-                <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
-                <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
+                <!-- <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div>
+                <div class="col-sm-4 col-sm-offset-1" style="margin-top: 10px;"><img src="https://placehold.it/900x640" class="img-responsive"></div> -->
             </div>
 
-            <div class="col-sm-7">
+            <div class="col-sm-7"></br></br>
                 <h1><?php echo $exibe['nome_produto']; ?></h1>
                 <p><?php echo $exibe['descricao_produto']; ?></p>
-                <p>R$ <?php echo number_format($exibe['preco_produto'], 2, ',', '.'); ?></p>
+                
+                </br>
+                <div style=    "display: inline-flex; width:50vw; ">
+                    <div style="width:50%"><h2>R$ <?php echo number_format($exibe['preco_produto'], 2, ',', '.'); ?></h2></div>
+
+                    <div style="width:50%"><h3>Quantidade em estoque: <?php echo number_format($exibe['quantidade_produto'])?></h3></div>
+                </div>
 
                 <div class="text-center" style="margin-top: 1.5%"; margin-bottom: 1%>
                 <?php if ($exibe['quantidade_produto'] > 0) { ?>
 
                 <a href="carrinho.php?id_produto=<?php echo $exibe['id_produto']; ?>">
-                <button class="butao_comprar" >Comprar</button>	
+                <button class="butao_comprar" style="margin-top: 7%;">Comprar</button>	
                 </a>
 
                 <?php  }
@@ -96,7 +103,7 @@ if (!empty($_GET['id_produto'])) {
 <?php } else {
     header("location:index.php");
     exit;
-} ?>
+} ?></br></br></br></br></br></br>
 
 <?php include 'rodape.html'; ?>
 </body>
