@@ -81,7 +81,7 @@ include 'cadastro_if.php';
                         onclick="showFields('pessoa_juridica_fields')"> Pessoa Jurídica<br>
 
                     <!-- Campos específicos para Pessoa Física -->
-                    <div id="pessoa_fisica_fields" style="display: none;" class="row">
+                    <div id="pessoa_fisica_fields"  style="display: none;">
                         <label for="nome_pf">Nome:</label>
                         <input type="text" name="nome_pf" class="form-control">
 
@@ -151,11 +151,9 @@ include 'cadastro_if.php';
                         <label for="complemento_pf">Complemento:</label>
                         <input type="text" name="complemento_pf" placeholder="Opcional" class="form-control"><br>
                     </div>
-                </form>
-                <!----------------------------------------------------------------------------------------------------------------->
-                <form method="POST" action="cadastro_if.php" onsubmit="return validarSenha();">
+              
                     <!-- Campos específicos para Pessoa Jurídica -->
-                    <div id="pessoa_juridica_fields" style="display: none;">
+                    <div id="pessoa_juridica_fields" style="display: none; width: 25vw; margin-left:0.8%;" class="row">
                         <label for="nome_fantasia_pj">Nome Fantasia:</label>
                         <input type="text" name="nome_fantasia_pj" class="form-control"><br>
 
@@ -172,12 +170,14 @@ include 'cadastro_if.php';
                         <input type="text" name="funcionario_comprador_pj" class="form-control"><br>
 
                         <label for="telefone_pj">Telefone:</label>
-                        <input type="text" name="telefone_pj_ddd" placeholder="DDD" maxlength="3">
+                        <div style="display: inline-flex">
+                        <input type="text" name="telefone_pj_ddd" placeholder="DDD" maxlength="3" class="form-control" style="width:5vw;">
                         <input type="text" name="telefone_pj_numero" placeholder="Número" maxlength="11"
-                            id="mask_telefone_pj" class="form-control"><br>
-
+                            id="mask_telefone_pj" class="form-control" style="width:20vw;"><br>
+                        </div>
+                            <br>
                         <label for="estado_pj">Estado:</label>
-                        <select name="estado_pj">
+                        <select name="estado_pj" class="form-control">
                             <option value="AC">(AC)</option>
                             <option value="AL">(AL)</option>
                             <option value="AP">(AP)</option>
