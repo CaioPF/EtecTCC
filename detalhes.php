@@ -9,10 +9,11 @@
 
 <?php include 'links.php'; ?>
 
-<style>
+<style> 
 .navbar {
     margin-bottom: 0;
 }
+
 </style>
 </head>
 
@@ -51,7 +52,7 @@ if (!empty($_GET['id_produto'])) {
                 <?php if ($exibe['quantidade_produto'] > 0) { ?>
 
                 <a href="carrinho.php?id_produto=<?php echo $exibe['id_produto']; ?>">
-                <button class="btn btn-lg btn-success" style="margin-left: -85%;">Comprar</button>	
+                <button class="butao_comprar" >Comprar</button>	
                 </a>
 
                 <?php  }
