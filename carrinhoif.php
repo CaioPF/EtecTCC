@@ -52,8 +52,7 @@
                 </a>
                 <span id="quantityDisplay<?php echo $id_produto; ?>"><?php echo $quantidade_produto; ?></span>
                 <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'add'); return false;">
-                    <button class="btn btn-sm btn-primary">+</button>
-                    <button class="btn btn-sm btn-primary" onclick="atualizarCarrinho()">++</button>
+                    <button class="btn btn-sm btn-primary" onclick="atualizarCarrinho()">+</button>
                 </a>
             </h4>
         </div>
@@ -73,11 +72,6 @@
 
     <div class="row text-center" style="margin-top: 15px;">
         <h1>Total: R$ <span id="totalAmount"><?php echo number_format($total, 2, ',', '.'); ?></span></h1>
-    </div>
-
-    <!-- Botão para atualizar o carrinho -->
-    <div class="row text-center" style="margin-top: 15px;">
-        <button class="btn btn-lg btn-success" onclick="atualizarCarrinho()">Atualizar Carrinho</button>
     </div>
 </div>
 
