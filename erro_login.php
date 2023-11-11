@@ -13,6 +13,15 @@
 	.navbar{
 		margin-bottom: 0;
 	}
+	.tent-erro{
+    background-color: #daa520;
+    color: white;
+		}
+		.fundo
+		{
+			width:100% ;
+			height: 30.6vw;
+		}
 	</style>
 </head>
 
@@ -48,15 +57,16 @@
 	</nav>
 </div>
 <!------------------------------------------------------------------------------------------------->
-
+<div class="fundo">
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
 			<h2>Email ou senha incorreto!</h2>
-			<a href="login.php" class="btn btn-block btn-info" role="button">Tentar Novamente</a>
+			<a href="login.php" class="btn btn-block tent-erro" role="button">Tentar Novamente</a>
 			<!--<a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>-->
 		</div>
 	</div>
+</div>
 </div>
 
 <?php include 'rodape.html' ?>
