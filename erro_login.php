@@ -50,7 +50,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="cadastro.php"><span> Cadastro</a></li>
 					<li><a href="login.php"><span> Login</a></li>
-					<li><a href="contato.php">Contato</a></li>
+					<li><a href="sobre_nos.php">Sobre nós</a></li>
 				</ul>
 			</div>
 		</div>
@@ -61,14 +61,18 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
+
+		 	</br></br></br>
 			<h2>Email ou senha incorreto!</h2>
+
+			</br></br>
 			<a href="login.php" class="btn btn-block tent-erro" role="button">Tentar Novamente</a>
 			<!--<a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>-->
 		</div>
 	</div>
 </div>
 </div>
-
+	</br></br></br>
 <?php include 'rodape.html' ?>
 </body>
 </html>
