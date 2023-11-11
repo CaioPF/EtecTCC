@@ -53,6 +53,7 @@
                 <span id="quantityDisplay<?php echo $id_produto; ?>"><?php echo $quantidade_produto; ?></span>
                 <a href="#" onclick="updateQuantity(<?php echo $id_produto; ?>, 'add'); return false;">
                     <button class="btn btn-sm btn-primary">+</button>
+                    <button class="btn btn-sm btn-primary" onclick="atualizarCarrinho()">++</button>
                 </a>
             </h4>
         </div>
