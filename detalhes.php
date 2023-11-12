@@ -89,7 +89,8 @@ if (!empty($_GET['id_produto'])) {
 
                 <?php  }
                         else { ?> 
-
+                
+                </br>
                 <button class="btn btn-lg btn-danger" style="margin-left: -85%;" disabled>
                     <span class="glyphicon glyphicon-remove-circle" > Esgotado</span>
                 </button>

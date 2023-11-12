@@ -18,8 +18,8 @@
 			background-color: white;
 			border-color: #daa520;
 			color: #daa520;
-			margin-left: 5.5vw;
-			margin-top: -4.3vw;
+			margin-left: 7vw;
+			margin-top: -4.9vw;
 		}
 		.botao-esq-senha
 		{
