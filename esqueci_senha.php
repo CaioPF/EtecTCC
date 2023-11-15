@@ -23,6 +23,7 @@ include 'menu.php';
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
+            </br></br></br></br></br></br></br>
             <h2>Digite o email cadastrado na loja</h2>
 
             <form method="post" action="enviar_email.php" name="login">
@@ -46,7 +47,7 @@ include 'menu.php';
     </div>
 </div>
 
-
+</br></br></br></br></br></br></br></br>
 <?php include 'rodape.html';?>
 
 </body>
