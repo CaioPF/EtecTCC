@@ -14,6 +14,22 @@
         .navbar{
             margin-bottom: 0;
         }
+        .cont-compra 
+        {
+            background-color:#daa520 ;
+            color: #ffffff;
+        }
+        .fin-compra
+        {
+            border-color: #daa520;
+            background-color: #ffffff;
+            color: #daa520;
+        }
+        body
+{
+  background-color: #f4f4f4 !important;
+}
+
 	</style>
 </head>
 
@@ -22,7 +38,11 @@
 include 'conexao.php';
 include 'menu.php';
 
-// verificando se o codigo do produto NÃO está vazio
+?>
+
+
+<?php
+ // verificando se o codigo do produto NÃO está vazio
 if (!empty($_GET['id_produto'])) {
 
     // inserindo o código do produto na variável $codigo_produto
@@ -50,16 +70,18 @@ else {
     //mostrando o carrinho	vazio	
     include 'carrinhoif.php';
 }?>
+
     <div class="row text-center" style="margin-top: 15px;">
-        <a href="index.php"><button class="btn btn-lg btn-primary">Continuar Comprando</button></a>
+        <a href="index.php"><button class="btn btn-lg cont-compra ">Continuar Comprando</button></a>
 
         <?php if(count($_SESSION['carrinho']) > 0) { ?>
-        <a href="pagamento.php"><button class="btn btn-lg btn-success">Continuar</button></a>
+        <a href="pagamento.php"><button class="btn btn-lg fin-compra">Continuar</button></a>
         
         
         <?php }?>
     </div>
 </div>
+
 <?php include 'rodape.html'; ?>
 </body>
 </html>

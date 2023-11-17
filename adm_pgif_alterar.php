@@ -37,7 +37,7 @@ try {
 
 	                        WHERE id_produto = '$id_produto_altera' "); // as alterações serão feitas baseadas pelo codigo que recebe
 
-	header('location:adm_pg_alterar.php'); 
+	header('location:adm_alterar_produto.php'); 
 } 
 catch(PDOException $e) {  // se ocorrer algum erro, será gerado uma mensagem de erro	
 	echo $e->getMessage();  	

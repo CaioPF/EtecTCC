@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<title>Protect King</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Protect King</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-<link rel="stylesheet" href="pagamento.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="pagamento.css">
 
-<?php
-include 'conexao.php';
-include 'menu.php';
-include 'links.php';
-?>
+  <?php
+  include 'conexao.php';
+  include 'menu.php';
+  include 'links.php';
+  ?>
 </head>
 
 <body>
-  
-<div class="wrapper" id="app">
+
+  <div class="wrapper" id="app">
     <div class="card-form">
       <div class="card-list">
-        <!-- <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
+        <div class="card-item" v-bind:class="{ '-active' : isCardFlipped }">
           <div class="card-item__side -front">
             <div class="card-item__focus" v-bind:class="{'-active' : focusElementStyle }" v-bind:style="focusElementStyle" ref="focusElement"></div>
             <div class="card-item__cover">
@@ -134,56 +135,64 @@ include 'links.php';
             </div>
           </div>
         </div>
-      </div>-->
-      <div class="card-form__inner"> 
-        <div class="card-input">
-          <label for="cardNumber" class="card-input__label">Número do cartão</label>
-          <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask" v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber" autocomplete="off">
-        </div>
+      </div>
+        <div class="card-form__inner">
+          <div class="card-input">
+            <label for="cardNumber" class="card-input__label">Número do cartão</label>
+            <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask"
+              v-model="cardNumber" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardNumber"
+              autocomplete="off">
+          </div>
 
-        <div class="card-input">
-          <label for="cardName" class="card-input__label">Nome impresso no cartão</label>
-          <input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
-        </div>
+          <div class="card-input">
+            <label for="cardName" class="card-input__label">Nome impresso no cartão</label>
+            <input type="text" id="cardName" class="card-input__input" v-model="cardName" v-on:focus="focusInput"
+              v-on:blur="blurInput" data-ref="cardName" autocomplete="off">
+          </div>
 
-        <div class="card-input">
-          <label for="cardCPF" class="card-input__label">CPF</label>
-          <input type="text" id="cardCPF" class="card-input__input" v-mask="'###.###.###-##'" v-model="cardCPF" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardCPF" autocomplete="off">
-        </div>
+          <div class="card-input">
+            <label for="cardCPF" class="card-input__label">CPF</label>
+            <input type="text" id="cardCPF" class="card-input__input" v-mask="'###.###.###-##'" v-model="cardCPF"
+              v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardCPF" autocomplete="off">
+          </div>
 
 
-        <div class="card-form__row">
-          <div class="card-form__col">
-            <div class="card-form__group">
-              <label for="cardMonth" class="card-input__label">Validade</label>
-              <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
-                <option value="" disabled selected>Mês</option>
-                <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth" v-bind:key="n">
-                    {{n < 10 ? '0' + n : n}}
-                </option>
-              </select>
-              <select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardDate">
-                <option value="" disabled selected>Ano</option>
-                <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
+          <div class="card-form__row">
+            <div class="card-form__col">
+              <div class="card-form__group">
+                <label for="cardMonth" class="card-input__label">Validade</label>
+                <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" v-on:focus="focusInput"
+                  v-on:blur="blurInput" data-ref="cardDate">
+                  <option value="" disabled selected>Mês</option>
+                  <option v-bind:value="n < 10 ? '0' + n : n" v-for="n in 12" v-bind:disabled="n < minCardMonth"
+                    v-bind:key="n">
+                    {{n < 10 ? '0' + n : n}} </option>
+                </select>
+                <select class="card-input__input -select" id="cardYear" v-model="cardYear" v-on:focus="focusInput"
+                  v-on:blur="blurInput" data-ref="cardDate">
+                  <option value="" disabled selected>Ano</option>
+                  <option v-bind:value="$index + minCardYear" v-for="(n, $index) in 12" v-bind:key="n">
                     {{$index + minCardYear}}
-                </option>
-              </select>
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="card-form__col -cvv">
+              <div class="card-input">
+                <label for="cardCvv" class="card-input__label">CVV</label>
+                <input type="text" class="card-input__input" id="cardCvv" v-mask="'###'" maxlength="4" v-model="cardCvv"
+                  v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
+              </div>
             </div>
           </div>
-          <div class="card-form__col -cvv">
-            <div class="card-input">
-              <label for="cardCvv" class="card-input__label">CVV</label>
-              <input type="text" class="card-input__input" id="cardCvv" v-mask="'###'" maxlength="4" v-model="cardCvv" v-on:focus="flipCard(true)" v-on:blur="flipCard(false)" autocomplete="off">
-            </div>
+
+          <div class="card-input">
+            <label for="cardEmail" class="card-input__label">Email</label>
+            <input type="text" id="cardEmail" class="card-input__input" v-model="cardEmail" v-on:focus="focusInput"
+              v-on:blur="blurInput" data-ref="cardEmail" autocomplete="off">
           </div>
-        </div>
 
-        <div class="card-input">
-          <label for="cardEmail" class="card-input__label">Email</label>
-          <input type="text" id="cardEmail" class="card-input__input" v-model="cardEmail" v-on:focus="focusInput" v-on:blur="blurInput" data-ref="cardEmail" autocomplete="off">
-        </div>
-
-        <!-- <div class="card-form__row">
+          <!-- <div class="card-form__row">
           <div class="card-form__col">
             <div class="card-form__group">
               <label for="cardMonth" class="card-input__label">Formas de pagamento</label>
@@ -193,17 +202,19 @@ include 'links.php';
             </div>
           </div>
         </div> -->
-        
-        <button class="card-form__button" >
-          <a href="finalizarCompra.php">Finalizar Compra</a>
-        </button>
+          <a href="finalizarCompra.php">
+            <button class="card-form__button">
+              Finalizar Compra
+            </button></a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
-  
-<script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script><script  src="pagamento.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+
+    <script src='https://unpkg.com/vue-the-mask@0.11.1/dist/vue-the-mask.js'></script>
+    <script src="pagamento.js"></script>
 
 </body>
+
 </html>

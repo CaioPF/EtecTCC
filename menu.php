@@ -21,7 +21,7 @@
           <!---------------------------------------------------------------------------------------------------------------------->
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Categoria <span class="caret"></span></a>
 
-          <ul class="dropdown-menu">                  <!--Os itens Desing, Infra-estrutra, Dados e etc estão dentro de categorias-->
+          <ul class="dropdown-menu">                 
             <li><a href="categoria.php?cat=Câmeras">Câmera de segurança</a></li>
             <li><a href="categoria.php?cat=Controle de acesso">Controle de acesso</a></li>
             <li><a href="categoria.php?cat=Sensor de presença">Sensor de presença</a></li>
@@ -40,7 +40,7 @@
       <!----------------------------------------------------------------------------------------------------------------------->
       <ul class="nav navbar-nav navbar-right">
         <?php  include 'session_start.php';?>
-        <li><a href="contato.php">Contato</a></li>
+        <li><a href="sobre_nos.php">Sobre nós</a></li>
       </ul>
     </div>
   </div>

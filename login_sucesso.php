@@ -13,6 +13,15 @@
 	.navbar{
 		margin-bottom: 0;
 	}
+	.ir-para-login{
+    background-color: #daa520;
+    color: white;
+		}
+		.fundo
+		{
+			width:100% ;
+			height: 30.6vw;
+		}
 	</style>
 </head>
 
@@ -51,13 +60,17 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4 text-center">
+
+			</br></br></br>
 			<h2>Usuário cadastrado com sucesso!</h2>
-			<a href="login.php" class="btn btn-block btn-info" role="button">Ir para login</a>
+
+			</br></br>
+			<a href="login.php" class="btn btn-block ir-para-login" role="button">Ir para login</a>
 			<!--<a href="esquecisenha.php" class="btn btn-block btn-primary" role="button">Esqueci a senha</a>-->
 		</div>
 	</div>
 </div>
-
+</br></br></br></br></br></br></br></br></br></br></br></br></br>
 <?php include 'rodape.html' ?>
 </body>
 </html>
