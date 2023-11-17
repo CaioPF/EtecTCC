@@ -51,7 +51,7 @@ include 'menu.php';
 
                     <div class="col-sm-2 col-xs-offset-right-1" style="padding-top:20px">
                             <a href="adm_apagarif_produto.php?id=<?php echo $exibe['id_produto']; ?>">	
-                            <button class="btn-edit btn-lg btn-block btn-warning">
+                            <button class="btn btn-lg btn-block btn-danger">
                         <span class="glyphicon glyphicon-remove"> Excluir</span>		
                     </div> 	
                     </th>
