@@ -216,17 +216,17 @@ quantidade_produto int not null
 
 insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
 values -- Câmeras
-	   ('Câmera TP-Link', 'Resolução de vídeo 1080p (Full HD), visão panorâmica 360°, conectividade Wi-Fi, visão noturna, detecção de movimento', '289.90', 'Câmeras', 'camera', 'Tp-link.jpg', '50'),
-	   ('Câmera Arlo Ultra', 'Resolução 4K HDR, visão noturna avançada, detecção de movimento avançada e integração com assistentes de voz.', '4698.00', 'Câmeras', 'camera','Arlo Ultra.jpg', '8'),
-       ('Câmera Amcrest ProHD', 'A Amcrest ProHD é uma câmera de segurança interna que oferece qualidade de vídeo em 1080p, visão noturna e detecção de movimento. Ela é conhecida por ser uma opção acessível com recursos sólidos.', '1339.90', 'Câmeras', 'camera','Amcrest ProHD.jpg', '11'),
-       ('Câmera Axis Communications Q Series', ' A Axis é uma marca líder em câmeras de rede e oferece uma variedade de modelos com recursos de alta qualidade', '1908.49', 'Câmeras', 'camera','Axis Communications Q Series.jpg', '6'),
-       ('Câmera teste','Não use isso como uma referencia meu querido', '99999.99', 'Câmeras', 'camera', 'Teste.jpg', '0');
+	   ('Câmera TP-Link', '<p> Resolução de vídeo 1080p (Full HD), visão panorâmica 360°, conectividade Wi-Fi, visão noturna, detecção de movimento. </p>', '289.90', 'Câmeras', 'camera', 'Tp-link.jpg', '50'),
+	   ('Câmera Arlo Ultra', '<p> Resolução 4K HDR, visão noturna avançada, detecção de movimento avançada e integração com assistentes de voz. </p>', '4698.00', 'Câmeras', 'camera','Arlo Ultra.jpg', '8'),
+       ('Câmera Amcrest ProHD', '<p> A Amcrest ProHD é uma câmera de segurança interna que oferece qualidade de vídeo em 1080p, visão noturna e detecção de movimento. Ela é conhecida por ser uma opção acessível com recursos sólidos. </p>', '1339.90', 'Câmeras', 'camera','Amcrest ProHD.jpg', '11'),
+       ('Câmera Axis Communications Q Series', '<p> A Axis é uma marca líder em câmeras de rede e oferece uma variedade de modelos com recursos de alta qualidade. </p>', '1908.49', 'Câmeras', 'camera','Axis Communications Q Series.jpg', '6'),
+       ('Câmera teste','<p> Não use isso como uma referencia meu querido', '99999.99', 'Câmeras', 'camera', 'Teste.jpg', '0');
        
 insert into produto (nome_produto, descricao_produto, preco_produto, categoria_produto, pasta_imagem, imagem_produto, quantidade_produto)
 values -- Controle de acesso
-	   ('iCLASS SE', ' Este leitor de cartão inteligente oferece autenticação segura por meio de cartões de proximidade ou smartphones. Ele suporta várias tecnologias de cartão e oferece comunicações criptografadas para proteger contra ameaças de segurança.', '599.90', 'Controle de acesso', 'controle de acesso','iCLASS SE.jpg', '20'),
-	   ('BioConnects Suprema BioStation 2', 'Um sistema de controle de acesso biométrico que utiliza reconhecimento de impressão digital avançado para autenticação. Ele é conhecido por sua velocidade e precisão na identificação de usuários.', '3815.80', 'Controle de acesso', 'controle de acesso','BioConnects Suprema BioStation 2.jpg', '15'),
-       ('Axis Communications Network Door Controller', 'Este controlador de porta de rede permite a integração de câmeras de segurança, intercomunicadores e controle de acesso em um único sistema de segurança baseado em rede.', '4199.99', 'Controle de acesso', 'controle de acesso', 'Axis Communications Network Door Controller.jpg', '20'),
+	   ('iCLASS SE', ' Este leitor de cartão inteligente oferece autenticação segura por meio de cartões de proximidade ou smartphones. Ele suporta várias tecnologias de cartão e oferece comunicações criptografadas para proteger contra ameaças de segurança. </p>', '599.90', 'Controle de acesso', 'controle de acesso','iCLASS SE.jpg', '20'),
+	   ('BioConnects Suprema BioStation 2', 'Um sistema de controle de acesso biométrico que utiliza reconhecimento de impressão digital avançado para autenticação. Ele é conhecido por sua velocidade e precisão na identificação de usuários. </p>', '3815.80', 'Controle de acesso', 'controle de acesso','BioConnects Suprema BioStation 2.jpg', '15'),
+       ('Axis Communications Network Door Controller', 'Este controlador de porta de rede permite a integração de câmeras de segurança, intercomunicadores e controle de acesso em um único sistema de segurança baseado em rede. </p>', '4199.99', 'Controle de acesso', 'controle de acesso', 'Axis Communications Network Door Controller.jpg', '20'),
        ('Controle de acesso TESTE', 'TESTANDO', '9999.99', 'Controle de acesso', 'controle de acesso', 'Controle de acesso TESTE.jpg', '0');
        
        
@@ -276,43 +276,3 @@ inner join produto on vendas.id_produto_vendas = produto.id_produto;
 -- select * from vw_venda where login_vendas = 1;
 
 -- --------------------------------------------------------------------------------------------------------------------------- --
-
-create table cartao(
-id_cartao int auto_increment primary key,
-nome_usuario_cartao varchar(100),
-mes_cartao varchar(12),
-ano_cartao  varchar(12),
-parcelas_cartao varchar(50),
-cpf_cartao varchar(50),
-email_cartao varchar(50)
-);
-
--- --------------------------------------------------------------------------------------------------------------------------- --
-
-create table carrinho(
-id_carrinho int auto_increment primary key,
-id_login int,
-foreign key (id_login) references loginn (id_login)
-);
-
--- --------------------------------------------------------------------------------------------------------------------------- --
-
-create table pedido(
-id_pedido int auto_increment primary key,
-data_pedido date not null,
-hora_pedido time not null,
-quantidade varchar(100) not null,
-id_login int,
-foreign key (id_login) references loginn (id_login),
-id_produto int,
-foreign key (id_produto) references produto (id_produto)
-);
-
--- ------------------------------------------------------------------------------------------------------------------------------------------ --
--- tudo o que esta abaxio da linha pontilhada são possiveis tabelas a serem criadas, nada definido. --
-
-create table agendamento(
-id_agendamento int auto_increment primary key,
-orcamento varchar(100) not null,
-visita varchar(100) not null
-);
