@@ -60,7 +60,7 @@ else {
         <ul class="dropdown-menu">
            
             <li><a href="adm_cadastrar_produto.php"><span>Cadastar produtos</span></a></li>
-            <li><a href="adm_pg_alterar.php"><span> Altera produto</span></a></li>
+            <li><a href="adm_alterar_produto.php"><span> Altera produto</span></a></li>
             <li><a href="adm_apagar_produto.php"><span> Apagar produto</span></a></li>
         </ul>
     </li>
