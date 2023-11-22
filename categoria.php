@@ -57,29 +57,40 @@
           <div class="col-sm-3">
             <div class="hoverp ">
 
-              <img src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>"
-                class="img-responsive imgm"> <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
+              <a href="detalhes.php?id_produto=<?php echo $exibe['id_produto']; ?>">
+                </br>
+                <img
+                  src="foto_produto/<?php echo $exibe['pasta_imagem']; ?>/<?php echo trim($exibe['imagem_produto']); ?>"
+                  class="img-responsive imgm"> <!--TRIM remove todos os possiveis espaços que podem atrapalhar o código-->
 
-              <div>
-                <h4 style="text-align: center;"><b>
-                    <?php echo mb_strimwidth($exibe['nome_produto'], 0, 15, '...'); ?>
-                  </b></h4>
-              </div> <!--mb_strimwidth limita o tanto de caracteres que é visivel-->
+                <div>
+                  <h4 style="  text-decoration: none;
+                         color: black;
+                         text-align: center;">
+                    <b>
+                      <?php echo mb_strimwidth($exibe['nome_produto'], 0, 15, '...'); ?>
+                    </b>
+                  </h4>
+                </div> <!--mb_strimwidth limita o tanto de caracteres que é visivel-->
 
-              <div>
-                <h5 style="text-align: center;">R$
-                  <?php echo number_format($exibe['preco_produto'], 2, ',', '.'); ?>
-                </h5>
-              </div> <!--number_format faz com que o preço fique no formato padrão BR-->
+                <div>
+                  <h5 style="  text-decoration: none;
+                        color: black;
+                        text-align: center;">
+                    R$
+                    <?php echo number_format($exibe['preco_produto'], 2, ',', '.'); ?>
+                  </h5>
+                </div> <!--number_format faz com que o preço fique no formato padrão BR-->
+              </a>
             </div>
-          </div>
-        <?php } ?>
+            </div>
+          <?php } ?>
+        </div>
       </div>
-    </div>
-  </div><br><br>
+    </div><br><br>
 
-  </br></br></br></br>
-  <?php include 'rodaPE.html'; ?>
+    </br></br></br></br>
+    <?php include 'rodaPE.html'; ?>
 
 </body>
 
