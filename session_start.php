@@ -50,8 +50,10 @@ else {
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Lista de perfil <span class="caret"></span></a>
         <ul class="dropdown-menu">
          <li><a href="listaUsuarios.php"><span>Usuários</span></a></li>
+         <li><a href="listaFuncionario.php"><span>Funcionários</span></a></li>
         <li><a href="listaClientePf.php"><span>Clientes PF</span></a></li>
         <li><a href="listaClientePj.php"><span>Clientes PJ</span></a></li>
+        
         </ul>
 
         <li><a data-toggle="dropdown" role="button" aria-haspopup="true" ria-expanded="false">Produtos <span class="caret"></span></a>

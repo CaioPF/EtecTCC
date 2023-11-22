@@ -6,11 +6,11 @@
     if(!empty($_GET['search']))
     {
         $data = $_GET['search'];
-        $sql = "SELECT * FROM  loginn WHERE id_login LIKE '%$data%' or email LIKE '%$data%' ORDER BY id_login DESC";
+        $sql = "SELECT * FROM  funcionario WHERE id_func LIKE '%$data%' or nome_func LIKE '%$data%' ORDER BY id_func DESC";
     }
     else
     {
-    $sql = "SELECT * FROM  loginn ORDER BY id_login DESC";
+    $sql = "SELECT * FROM  funcionario ORDER BY id_func DESC";
     }
     $result = $mysqli->query($sql);
 
@@ -19,12 +19,12 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Protect King</title>
+    <title>Clientes PF</title>
     <style>
         .table-bg{
             background: rgba(0,0,0,0.3);
@@ -66,7 +66,7 @@
 <body>
    
         <div class="m-5" height: 20px >    
-            <h1>Lista de Usuários</h1>
+            <h1>Lista de Funcionários</h1>
             <li class="no-bullet"><a href="index.php" class="custom-btn"><span class="glyphicon glyphicon-log-out"></span> Início</a></li>
 
             <div class="box-search">
@@ -85,27 +85,31 @@
             <thead>
                 <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Email </th>
-                <th scope="col">Senha</th>
-                <th> </th>
-                <!-- <th scope="col">Excluir</th> -->
+                <th scope="col">Nome </th>
+                <th scope="col">Sobrenome</th>
+                <th scope="col">Nascimento</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Cargo</th>
+                <th>  </th>
                 </tr>
             </thead>
             <tbody>
-             <?php
+                <?php
                 while($consulta_usuario = mysqli_fetch_assoc($result))
                 {
                         echo "<tr>";
-                        echo "<td>" .$consulta_usuario["id_login"]."</td>";
-                        echo "<td>" .$consulta_usuario["email"]."</td>";
-                        echo "<td>" .$consulta_usuario["senha"]."</td>";
+                        echo "<td>" .$consulta_usuario["id_func"]."</td>";
+                        echo "<td>" .$consulta_usuario["nome_func"]."</td>";
+                        echo "<td>" .$consulta_usuario["sobrenome_func"]."</td>";
+                        echo "<td>" .$consulta_usuario["nascimento_func"]."</td>";
+                        echo "<td>" .$consulta_usuario["cpf_func"]."</td>";
+                        echo "<td>" .$consulta_usuario["cargo_func"]."</td>";    
                         echo "<td>";
-                        echo '<a class="btn-edit btn btn-sm btn-warning" href="editaUsu.php?id_login=' . $consulta_usuario["id_login"] . '">Editar</a>';
+                        echo '<a class="btn-edit btn btn-sm btn-warning" href="editaFunc.php?id_func=' . $consulta_usuario["id_func"] . '">Editar</a>';
                         echo "</td>";
                         echo "</tr>";
-                   
                 }
-            ?>
+                ?>
             </tbody>
         </table>
     </div>
@@ -121,7 +125,7 @@
     });
     function searchData()
     {
-        window.location = 'listaUsuarios.php?search='+search.value;
+        window.location = 'listaFuncionario.php?search='+search.value;
     }
 </script>
 </html>

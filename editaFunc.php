@@ -1,9 +1,9 @@
 <?php 
 include 'conexao.php';
 
-$id_pf =$_GET['id_pf'];
+$id_func =$_GET['id_func'];
 
-$sqlSelect = "SELECT * FROM  pessoa_fisica where id_pf = $id_pf";
+$sqlSelect = "SELECT * FROM  funcionario where id_func = $id_func";
 
 $result = $mysqli->query($sqlSelect);
 
@@ -12,16 +12,15 @@ if($result->num_rows > 0)
     while($consulta_usuario = mysqli_fetch_assoc($result))
     {
        
-        $nome_pf = $consulta_usuario ['nome_pf'];
-        $sobrenome_pf = $consulta_usuario ['sobrenome_pf'];
-        $nascimento_pf = $consulta_usuario ['nascimento_pf'];
-        $cpf_pf = $consulta_usuario ['cpf_pf'];
+        $nome_func = $consulta_usuario ['nome_func'];
+        $sobrenome_func = $consulta_usuario ['sobrenome_func'];
+        $nascimento_func = $consulta_usuario ['nascimento_func'];
+        $cpf_func = $consulta_usuario ['cpf_func'];
+        $cargo_func = $consulta_usuario ['cargo_func'];
+       
     }
 }
-else {
-    // Trate o caso em que não há resultados para o ID fornecido
-    echo "Nenhum usuário encontrado com o ID: $id_pf";
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -114,29 +113,34 @@ else {
 				<form  method="POST" action="saveEditPf.php" class="center-content" enctype="multipart/form-data" >
 
 					<div class="mb-3">
-                        <label for="nome_pf" class="form-label">Nome:</label>
-                        <input type="text" name="nome_pf" value="<?php echo $nome_pf ?>" br>
+                        <label for="nome_pf" class="form-label">Nome</label>
+                        <input type="text" name="nome_func" value="<?php echo $nome_func ?>" br>
 					</div>
 					
 					<div class="form-group">
-                        <label for="sobrenome_pf">Sobrenome:</label>
-                        <input type="text" class="form-control" placeholder="Digite o nome"  name="sobrenome_pf" value="<?php echo $sobrenome_pf ?>" br>
+                        <label for="sobrenome_pf">Sobrenome</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome"  name="sobrenome_func" value="<?php echo $sobrenome_func ?>" br>
 					</div>
 
                     <div class="form-group">
-                        <label for="nascimento_pf">Data de Nascimento:</label>
-                        <input type="date" name="nascimento_pf" value="<?php echo $nascimento_pf ?>" ><br>
+                        <label for="nascimento_pf">Data de Nascimento</label>
+                        <input type="date" name="nascimento_func" value="<?php echo $nascimento_func ?>" ><br>
 					</div>
 
                     <div class="form-group">
-                        <label for="cpf_pf">CPF:</label>
-                        <input type="number" name="cpf_pf" maxlength="11" id="mask_cpf" value="<?php echo $cpf_pf ?>">
+                        <label for="cpf_pf">CPF</label>
+                        <input type="number" name="cpf_func" maxlength="11" id="mask_cpf" value="<?php echo $cpf_func ?>">
                         <div id="cpf-erro" class="erro" style="display: none;">CPF </div><br>
 					</div>
-                    </br></br>
-                   
+                  
+
+                    <div class="form-group">
+                        <label for="sobrenome_pf">Cargo</label>
+                        <input type="text" class="form-control" placeholder="Digite o nome"  name="cargo_func" value="<?php echo $cargo_func ?>" br>
+					</div>
+                    </br>
 				   <div  class="button">
-                        <input type="hidden" name="id_pf" value="<?php echo $id_pf ?> ">
+                        <input type="hidden" name="id_func" value="<?php echo $id_func ?> ">
                         <button type="submit" name="update" id="update" class="btn-edit btn btn-lg btn-warning">
                             <span> Enviar</span>
                         </button>
