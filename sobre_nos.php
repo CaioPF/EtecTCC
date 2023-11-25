@@ -130,11 +130,8 @@ z</p>
  
 
         <div class ="col-md-4">
-            <h3>Proque escolher a Protect King</h3>
-            <p>------------------------------------------------
-            ----------------------------------
-            -----------------------------------
-            -------------------</p>
+            <h3>Por que escolher a Protect King?</h3>
+            <p>Na Protect King nossa maior preocupação é a sua satisfação, por isso, entregamos praticidade, melhor custo e atendimento sob medida.</p>
 
             <button class="btn btn-block "  >
             <span class="glyphicon"></span>
